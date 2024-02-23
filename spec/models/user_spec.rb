@@ -16,6 +16,14 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_uniqueness_of(:username).case_insensitive }
   end
 
+  describe 'password encryption' do
+    it 'hashes the password' do
+      user = create(:user, password: 'password', password_confirmation: 'password')
+      expect(user.password_digest).not_to eq 'password'
+      expect(user.authenticate('password')).to be_truthy
+    end
+  end
+
   describe 'associations' do
     it { is_expected.to have_one(:profile).dependent(:destroy) }
   end

@@ -4,12 +4,14 @@ RSpec.describe 'Profiles API', type: :request do
   let!(:user) { create(:user) }
   let!(:profile) { create(:profile, user: user) }
   let(:user_id) { user.id }
+  let(:token) { auth_token_for_user(user) }
+  let(:headers) { { 'Authorization' => "Bearer #{token}" } }
 
   describe 'GET /users/:user_id/profile' do
     context 'when the profile does not exist' do
       before do
         user_without_profile = create(:user)
-        get "/users/#{user_without_profile.id}/profile"
+        get "/users/#{user_without_profile.id}/profile", headers: headers
       end
   
       it 'returns a not found status' do
@@ -17,13 +19,12 @@ RSpec.describe 'Profiles API', type: :request do
       end
     end
   end
-  
 
   describe 'POST /users/:user_id/profile' do
     let(:valid_attributes) { { profile: { bio: 'New Bio' } } }
 
     context 'when request attributes are valid' do
-      before { post "/users/#{user_id}/profile", params: valid_attributes }
+      before { post "/users/#{user_id}/profile", params: valid_attributes, headers: headers }
 
       it 'creates a new profile' do
         expect(response).to have_http_status(:created)
@@ -32,7 +33,7 @@ RSpec.describe 'Profiles API', type: :request do
     end
 
     context 'when an invalid request' do
-      before { post "/users/#{user_id}/profile", params: { profile: { bio: '' } } } 
+      before { post "/users/#{user_id}/profile", params: { profile: { bio: '' } }, headers: headers }
 
       it 'does not create a profile' do
         expect(response).to have_http_status(:unprocessable_entity)
@@ -44,7 +45,7 @@ RSpec.describe 'Profiles API', type: :request do
     let(:valid_attributes) { { profile: { bio: 'Updated Bio' } } }
 
     context 'when the profile exists' do
-      before { put "/users/#{user_id}/profile", params: valid_attributes }
+      before { put "/users/#{user_id}/profile", params: valid_attributes, headers: headers }
 
       it 'updates the profile' do
         expect(response).to have_http_status(:ok)
@@ -52,8 +53,9 @@ RSpec.describe 'Profiles API', type: :request do
       end
     end
   end
+
   describe 'DELETE /users/:user_id/profile' do
-    before { delete "/users/#{user_id}/profile" }
+    before { delete "/users/#{user_id}/profile", headers: headers }
 
     it 'deletes the profile' do
       user.reload
@@ -62,6 +64,3 @@ RSpec.describe 'Profiles API', type: :request do
     end
   end
 end
-
-
-

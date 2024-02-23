@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [:show, :update, :destroy]
+    skip_before_action :authenticate_request, only: [:create]
   
     # List all users
     def index
@@ -48,7 +49,7 @@ class UsersController < ApplicationController
     end
   
     def user_params
-      params.require(:user).permit(:username, :email, :first_name, :last_name, :password, :password_confirmation)
+      params.require(:user).permit(:username, :email, :first_name, :last_name, :password)
     end
   
   end
