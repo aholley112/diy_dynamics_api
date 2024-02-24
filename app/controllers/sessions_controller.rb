@@ -2,14 +2,14 @@ class SessionsController < ApplicationController
   skip_before_action :authenticate_request, only: [:login]
 
     def login
-      user = User.find_by(email: params[:email])
+      user = User.find_by(username: params[:username])
       
       if user&.authenticate(params[:password])
         token = jwt_encode(user_id: user.id)
         Rails.logger.info "Generated Token: #{token}"  
         render json: { token: token }, status: :ok
       else
-        render json: { error: 'Invalid email or password' }, status: :unauthorized
+        render json: { error: 'Invalid username or password' }, status: :unauthorized
       end
     end
   
