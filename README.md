@@ -1,26 +1,30 @@
-# README
-<img width="1375" alt="Screenshot 2024-02-29 at 10 12 28 AM" src="https://github.com/aholley112/diy_dynamics_api/assets/130320844/8ab69620-de3f-4534-a15e-74e172061772">
+# DIY_Dynamics_API
 
+The DIY Dynamics Backend API serves as the foundation for my DIY Platform full-stack project. The purpose of the backend API is to provide a centralized system for storing, managing, and serving DIY project data to users. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It acts as the core backend component responsible for handling user authentication, CRUD operations on DIY projects, and enabling interaction between the frontend and backend. It also facilitates the management of user accounts, DIY projects, materials, tools, and other related resources. The DIY Dynamics Backend API is designed for the end-users of the DIY Platform application. These users interact with the frontend of the DIY Platform to access, create, and manage DIY projects. The DIY Platform Backend API handles user authentication, CRUD operations for DIY projects, materials, tools, and user profiles. It facilitates seamless communication with the frontend application through RESTful endpoints and JSON responses. Additionally, the API implements authentication mechanisms like JWT tokens to secure access to resources and authorize user actions. Overall, the DIY Platform Backend API serves as the backbone of the DIY Platform project, managing DIY project data and facilitating user interaction with the application.
 
-Things you may want to cover:
+# Architecture
 
-* Ruby version
+The API is designed to manage a variety of resources including Users, Profiles, Projects, Materials, Tools, Project Materials, and Project Tools, each corresponding to a model within the application's database.
 
-* System dependencies
+# Set Up
 
-* Configuration
+Prerequisites TODO
+Installing TODO
+Usage TODO
 
-* Database creation
+# Gems Used
 
-* Database initialization
+**bcrypt**
+**jwt**
 
-* How to run the test suite
+# Testing 
 
-* Services (job queues, cache servers, search engines, etc.)
+**rspec-rails**
+**factory_bot_rails**
+**faker**
 
-* Deployment instructions
+# Frontend Client
 
-* ...
+The frontend DIY_Dynamics_Client repository is located at: https://github.com/aholley112/diy_dynamics_client
