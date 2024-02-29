@@ -25,7 +25,7 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'POST /users' do
-    let(:valid_attributes) { { user: attributes_for(:user) } }
+    let(:valid_attributes) {attributes_for(:user) } 
   
     it 'creates a new user' do
       expect {
@@ -36,7 +36,7 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'PUT /users/:id' do
-    let(:valid_attributes) { { user: { username: 'UpdatedUsername' } } }
+    let(:valid_attributes) { { username: 'UpdatedUsername' } }
 
     before { put "/users/#{user_id}", params: valid_attributes, headers: headers }
 

@@ -22,7 +22,6 @@ RSpec.describe 'Tools API', type: :request do
     end
   end
 
-  # Test suite for GET /tools/:id
   describe 'GET /tools/:id' do
     before { get "/tools/#{tool_id}", headers: headers }
 
@@ -47,7 +46,7 @@ RSpec.describe 'Tools API', type: :request do
   end
 
   describe 'POST /tools' do
-    let(:valid_attributes) { { tool: { tool_name: 'Drill', description: 'A tool for making holes' } } }
+    let(:valid_attributes) { { tool_name: 'Drill', description: 'A tool for making holes' } } 
   
     context 'when the request is valid' do
       before { post '/tools', params: valid_attributes, headers: headers }
@@ -60,7 +59,7 @@ RSpec.describe 'Tools API', type: :request do
     end
   
     context 'when the request is invalid' do
-      before { post '/tools', params: { tool: { tool_name: 'Drill' } }, headers: headers } 
+      before { post '/tools', params: { tool_name: 'Drill' }, headers: headers } 
     
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -74,7 +73,7 @@ RSpec.describe 'Tools API', type: :request do
   end
 
   describe 'PUT /tools/:id' do
-    let(:valid_attributes) { { tool: { tool_name: 'Updated Drill', description: 'An updated tool for making holes' } } } 
+    let(:valid_attributes) { { tool_name: 'Updated Drill', description: 'An updated tool for making holes' } } 
 
     context 'when the record exists' do
       before { put "/tools/#{tool_id}", params: valid_attributes, headers: headers }
@@ -96,7 +95,7 @@ RSpec.describe 'Tools API', type: :request do
     end
 
     it 'deletes the tool' do
-      expect { Tool.find(tool_id) }.to raise_error(ActiveRecord::RecordNotFound)
+      expect(Tool.find_by(id: tool_id)).to be_nil
     end
   end
 end

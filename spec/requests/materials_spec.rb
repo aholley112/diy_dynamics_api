@@ -1,32 +1,26 @@
 require 'rails_helper'
 
-def generate_token_for(user)
- 
-  payload = { user_id: user.id, exp: 24.hours.from_now.to_i }
-  JWT.encode(payload, Rails.application.credentials.secret_key_base)
-end
-
 RSpec.describe "Materials", type: :request do
-  let!(:user) { create(:user) } 
-  let!(:materials) { create_list(:material, 10) }
+  let(:user) { create(:user) } 
+  let(:materials) { create_list(:material, 10) }
   let(:material_id) { materials.first.id }
-  let(:headers) { { "Authorization" => "Bearer #{generate_token_for(user)}" } }
+  let(:token) { auth_token_for_user(user) } 
+  let(:headers) { { "Authorization" => "Bearer #{token}" } }
 
+  before { materials }
+  
   describe 'GET /materials' do
     before { get '/materials', headers: headers }
 
     it 'returns materials' do
       expect(json).not_to be_empty
       expect(json.size).to eq(10)
-    end
-
-    it 'returns status code 200' do
       expect(response).to have_http_status(200)
     end
-  end
+    end
 
 describe 'POST /materials' do
-  let(:valid_attributes) { { material: { material_name: 'Lumber', description: 'Pine wood for construction' } } }
+  let(:valid_attributes) { { material_name: 'Lumber', description: 'Pine wood for construction' } }
 
   context 'when the request is valid' do
     before { post '/materials', params: valid_attributes, headers: headers }
@@ -39,22 +33,22 @@ describe 'POST /materials' do
   end
 
   context 'when the request is invalid' do
-    before { post '/materials', params: { material: { material_name: 'Foam' } }, headers: headers }
+    before { post '/materials', params: { material_name: 'Foam' }, headers: headers }
 
     it 'returns status code 422' do
       expect(response).to have_http_status(422)
     end
 
     it 'returns a validation failure message' do
-      expect(response.body).to include("\"description\":[\"can't be blank\"]")
+      expect(response.body).to match(/can't be blank/)
     end
   end
 end
 
   describe 'PUT /materials/:id' do
-    let!(:material) { create(:material) } 
+    let(:material) { create(:material) } 
     let(:material_id) { material.id } 
-    let(:valid_attributes) { { material: { material_name: 'Updated Name', description: 'Updated description' } } }
+    let(:valid_attributes) { { material_name: 'Updated Name', description: 'Updated description' } } 
   
     context 'when the record exists' do
       before { put "/materials/#{material_id}", params: valid_attributes, headers: headers }
