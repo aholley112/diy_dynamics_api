@@ -10,9 +10,9 @@ The API is designed to manage a variety of resources including Users, Profiles, 
 
 # Set Up
 
-Prerequisites TODO
-Installing TODO
-Usage TODO
+- Prerequisites TODO
+- Installing TODO
+- Usage TODO
 
 # Gems Used
 
