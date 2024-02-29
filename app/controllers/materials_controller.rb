@@ -2,17 +2,23 @@ class MaterialsController < ApplicationController
   before_action :set_material, only: [:show, :update, :destroy]
 
   # GET /materials
+  #List all materials
+
   def index
     @materials = Material.all
     render json: @materials
   end
 
-  # GET /materials/:id
+  # GET /materials/:id. 
+  # Show a specific material
+
   def show
     render json: @material
   end
 
-  # POST /materials
+  # POST /materials. 
+  #Create a new material
+
   def create
     @material = Material.new(material_params)
     if @material.save
@@ -22,7 +28,9 @@ class MaterialsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /materials/:id
+  # PATCH/PUT /materials/:id. 
+  #Update a material
+
   def update
     if @material.update(material_params)
       head :no_content
@@ -32,17 +40,21 @@ class MaterialsController < ApplicationController
   end
 
   # DELETE /materials/:id
+  #  Deletes a material by id
   def destroy
     @material.destroy
   end
 
   private
     
-    def set_material
-      @material = Material.find(params[:id])
-    end
+  # Finds a material by id and sets it for the show, update and destroy actions
 
-    def material_params
-      params.require(:material).permit(:material_name, :description)
-    end
+  def set_material
+    @material = Material.find(params[:id])
+  end
+
+  # Defines parameters 
+  def material_params
+    params.require(:material).perm(:material_name, :description)
+  end
 end

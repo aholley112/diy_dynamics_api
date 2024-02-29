@@ -21,7 +21,7 @@ RSpec.describe 'Profiles API', type: :request do
   end
 
   describe 'POST /users/:user_id/profile' do
-    let(:valid_attributes) { { profile: { bio: 'New Bio' } } }
+    let(:valid_attributes) { { bio: 'New Bio' } }
 
     context 'when request attributes are valid' do
       before { post "/users/#{user_id}/profile", params: valid_attributes, headers: headers }
@@ -33,7 +33,7 @@ RSpec.describe 'Profiles API', type: :request do
     end
 
     context 'when an invalid request' do
-      before { post "/users/#{user_id}/profile", params: { profile: { bio: '' } }, headers: headers }
+      before { post "/users/#{user_id}/profile", params:  { bio: '' }, headers: headers }
 
       it 'does not create a profile' do
         expect(response).to have_http_status(:unprocessable_entity)
@@ -42,7 +42,7 @@ RSpec.describe 'Profiles API', type: :request do
   end
 
   describe 'PUT /users/:user_id/profile' do
-    let(:valid_attributes) { { profile: { bio: 'Updated Bio' } } }
+    let(:valid_attributes) { { bio: 'Updated Bio' } }
 
     context 'when the profile exists' do
       before { put "/users/#{user_id}/profile", params: valid_attributes, headers: headers }
