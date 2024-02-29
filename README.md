@@ -16,14 +16,14 @@ Usage TODO
 
 # Gems Used
 
-**bcrypt**
-**jwt**
+- **bcrypt**
+- **jwt**
 
 # Testing 
 
-**rspec-rails**
-**factory_bot_rails**
-**faker**
+- **rspec-rails**
+- **factory_bot_rails**
+- **faker**
 
 # Frontend Client
 
