@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #get 'project/Materials' This automatically updated.
+  
     resources :users do
       resource :profile, only: [:show, :create, :update, :destroy]
     end
