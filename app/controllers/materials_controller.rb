@@ -2,7 +2,7 @@ class MaterialsController < ApplicationController
   before_action :set_material, only: [:show, :update, :destroy]
 
   # GET /materials
-  #List all materials
+  # List all materials
 
   def index
     @materials = Material.all
@@ -17,7 +17,7 @@ class MaterialsController < ApplicationController
   end
 
   # POST /materials. 
-  #Create a new material
+  # Create a new material
 
   def create
     @material = Material.new(material_params)
@@ -28,8 +28,8 @@ class MaterialsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /materials/:id. 
-  #Update a material
+  # PUT /materials/:id. 
+  # Update a material
 
   def update
     if @material.update(material_params)
@@ -40,7 +40,7 @@ class MaterialsController < ApplicationController
   end
 
   # DELETE /materials/:id
-  #  Deletes a material by id
+  # Deletes a material by id
   def destroy
     @material.destroy
   end
@@ -54,7 +54,8 @@ class MaterialsController < ApplicationController
   end
 
   # Defines parameters 
+  
   def material_params
-    params.require(:material).perm(:material_name, :description)
+    params.permit(:material_name, :description)
   end
 end

@@ -52,17 +52,20 @@ end
 private
 
 # Finds a user by id and sets it for the show, update and destroy actions
+
 def set_user
     @user = User.find_by(id: params[:user_id])
     render(json: { error: "User not found" }, status: :not_found) and return unless @user
 end
 
 # Finds a profile by user id and sets it for the show, update and destroy actions
+
 def set_profile
     @profile = @user&.profile
 end
 
 # Defines parameters
+
 def profile_params
     params.permit(:bio)
 end
