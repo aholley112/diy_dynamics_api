@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :tools 
     
     post '/login', to: 'sessions#login'
+    post '/signup', to: 'users#create'
   end
   
