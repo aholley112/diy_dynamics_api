@@ -59,7 +59,8 @@ class ProjectMaterialsController < ApplicationController
     # Defines parameters
     
     def project_material_params
-      params.permit(:project_id, :material_id, :price, :quantity)
+      params.permit(:quantity_needed, :price, :project_id, :material_id)
     end
   end
+
   

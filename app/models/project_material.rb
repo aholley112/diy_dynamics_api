@@ -7,9 +7,11 @@ class ProjectMaterial < ApplicationRecord
 
   # Validations
 
-  validates :quantity, presence: true
-  validates :price, presence: true
+  
+  validates :quantity_needed, presence: true, numericality: { greater_than: 0 }
+  validates :price, presence: true, numericality: { greater_than_or_equal_to: 0.0 }
   validates :project_id, presence: true
   validates :material_id, presence: true
 
+ 
 end
