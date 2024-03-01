@@ -3,21 +3,19 @@ class Project < ApplicationRecord
 # Associations
   belongs_to :user
 
-  # Categories
- # has_many :category_joins
- # has_many :categories, through: :category_joins
+# Categories
+has_and_belongs_to_many :categories, join_table: 'categories_projects'
 
   # Materials
- # has_many :material_join
- # has_many :materials, through: :material_joins
+  has_and_belongs_to_many :tools, join_table: 'projects_tools'
 
   # Tools
- # has_many :tool_joins
- # has_many :tools, through: :tool_joins
+  has_and_belongs_to_many :tools, join_table: :projects_tools
 
   # Project Materials and Project Tools
- # has_many :project_materials 
- # has_many :project_tools 
+  has_many :project_materials, dependent: :destroy
+  has_many :project_tools, dependent: :destroy
+  
 
   
   # Validations

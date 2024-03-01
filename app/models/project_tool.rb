@@ -4,4 +4,6 @@ class ProjectTool < ApplicationRecord
 
   # Associations
   belongs_to :project
+  belongs_to :tool
+
 end
