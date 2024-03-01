@@ -5,6 +5,6 @@ FactoryBot.define do
     is_favorite_project { false }
     instructions { "MyText" }
     est_time_to_completion { "MyString" }
-    user { nil }
+    user 
   end
 end
