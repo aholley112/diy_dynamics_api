@@ -1,8 +1,8 @@
 class Category < ApplicationRecord
 
   # Associations
-    has_many :category_joins
-    has_many :projects, through: :category_joins
+  
+  has_and_belongs_to_many :projects, join_table: 'categories_projects'
 
   # Validations
     validates :category_name, presence: true

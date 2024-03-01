@@ -28,8 +28,9 @@ class CategoriesController < ApplicationController
     # PUT /categories/:id
     # Update a category
     def update
-      if @category.update(category_params)
-        head :no_content
+      @category = Category.find(params[:id])
+    if @category.update(category_params)
+      render json: @category
       else
         render json: @category.errors, status: :unprocessable_entity
       end
