@@ -33,7 +33,7 @@ class MaterialsController < ApplicationController
 
   def update
     if @material.update(material_params)
-      head :no_content
+      render json: @material
     else
       render json: @material.errors, status: :unprocessable_entity
     end
@@ -43,6 +43,7 @@ class MaterialsController < ApplicationController
   # Deletes a material by id
   def destroy
     @material.destroy
+    head :no_content
   end
 
   private
