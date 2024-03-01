@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_27_183206) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_01_030304) do
   create_table "categories", force: :cascade do |t|
     t.string "category_name"
     t.text "description"
@@ -51,6 +51,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_27_183206) do
     t.integer "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "material_id", null: false
+    t.index ["material_id"], name: "index_project_materials_on_material_id"
     t.index ["project_id"], name: "index_project_materials_on_project_id"
   end
 
@@ -99,6 +101,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_27_183206) do
   end
 
   add_foreign_key "profiles", "users"
+  add_foreign_key "project_materials", "materials"
   add_foreign_key "project_materials", "projects"
   add_foreign_key "project_tools", "projects"
   add_foreign_key "projects", "users"
