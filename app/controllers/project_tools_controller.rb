@@ -59,7 +59,7 @@ class ProjectToolsController < ApplicationController
     # Defines parameters
 
     def project_tool_params
-      params.permit(:project_id, :tool_id, :price, :quantity) 
+      params.permit(:project_id, :tool_id, :price, :quantity_needed) 
     end
   end
   
