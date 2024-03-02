@@ -47,13 +47,9 @@ def update
 # Deletes a profile
 
 def destroy
-    if @profile
-        @profile.destroy
-        head :no_content
-    else
-        render json: { error: "Profile not found" }, status: :not_found
-    end
-end
+    @profile.destroy
+    render json: { message: "Profile successfully deleted." }, status: :ok
+  end
 
 private
 

@@ -32,20 +32,20 @@ end
 # Update a tool
 
 def update
-if @tool.update(tool_params)
-    head :no_content
-  else
-    render json: @tool.errors, status: :unprocessable_entity
+    if @tool.update(tool_params)
+      render json: @tool 
+    else
+      render json: @tool.errors, status: :unprocessable_entity
+    end
   end
-end
 
 # DELETE /tools/:id
 # Deletes a tool by id
 
 def destroy
     @tool.destroy
-    head :no_content
-end
+    render json: { message: "Tool successfully deleted." }, status: :ok
+  end
 
 private
     
@@ -57,7 +57,7 @@ private
 
     # Defines parameters
     def tool_params
-    params.permit(:tool_name, :description, :tool_type)
+    params.permit(:tool_name, :description)
     end
 end
 

@@ -40,7 +40,7 @@ class CategoriesController < ApplicationController
     # Deletes a category by id
     def destroy
       @category.destroy
-      head :no_content
+      render json: { message: "Category successfully deleted." }, status: :ok
     end
   
     private

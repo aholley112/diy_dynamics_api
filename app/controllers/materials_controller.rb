@@ -43,7 +43,7 @@ class MaterialsController < ApplicationController
   # Deletes a material by id
   def destroy
     @material.destroy
-    head :no_content
+    render json: { message: "Material successfully deleted." }, status: :ok
   end
 
   private

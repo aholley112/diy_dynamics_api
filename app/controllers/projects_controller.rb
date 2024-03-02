@@ -45,12 +45,10 @@ class ProjectsController < ApplicationController
     # Delete a project
 
     def destroy
-      if @project.destroy
-        head :no_content
-      else
-        render json: @project.errors, status: :unprocessable_entity
-      end
+      @project.destroy
+      render json: { message: "Project successfully deleted." }, status: :ok
     end
+    
   
     private
   
