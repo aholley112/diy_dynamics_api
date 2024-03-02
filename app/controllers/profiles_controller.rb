@@ -30,12 +30,18 @@ end
 # Updates a profile
 
 def update
-    if @profile.update(profile_params)
-    render json: @profile
-    else
-    render json: profile.errors, status: :unprocessable_entity
+    if @profile.nil?
+      render json: { error: "Profile not found" }, status: :not_found
+      return
     end
-end
+  
+    if @profile.update(profile_params)
+      render json: @profile
+    else
+      render json: @profile.errors, status: :unprocessable_entity
+    end
+  end
+  
 
 # DELETE /users/:user_id/profile
 # Deletes a profile
