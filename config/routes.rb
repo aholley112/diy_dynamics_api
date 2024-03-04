@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
     resources :projects 
     resources :project_materials
+    resources :project_tools
 
 
     resources :categories
