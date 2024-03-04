@@ -7,7 +7,6 @@ validates :description, presence: true
 # Associations
 
 
-has_many :tool_joins 
-has_many :projects, through: :tool_joins 
+has_and_belongs_to_many :projects, join_table: :tools_projects
 
 end
