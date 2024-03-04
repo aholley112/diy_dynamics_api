@@ -45,7 +45,7 @@ class ProjectToolsController < ApplicationController
 
     def destroy
       @project_tool.destroy
-      head :no_content
+      render json: { message: "Project tool successfully deleted." }, status: :ok
     end
   
     private

@@ -40,7 +40,7 @@ class ProjectMaterialsController < ApplicationController
   # Delete a project material
   def destroy
     @project_material.destroy
-    head :no_content
+    render json: { message: "Project material successfully deleted." }, status: :ok
   end
 
   private
