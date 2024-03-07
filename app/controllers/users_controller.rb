@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     # Create a new user
 
     def create
+      Rails.logger.info params.inspect
       @user = User.new(user_params)
   
       if @user.save
