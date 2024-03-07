@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :project_materials
     resources :project_tools
 
+    get 'categories/search', to: 'categories#search'
 
     resources :categories
     resources :materials
