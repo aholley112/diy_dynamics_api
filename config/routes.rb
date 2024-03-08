@@ -4,7 +4,12 @@ Rails.application.routes.draw do
       resource :profile, only: [:show, :create, :update, :destroy]
     end
 
-    resources :projects 
+    # resources :projects do
+    #   member do
+    #     patch :toggle_favorite
+    #   end
+    # end
+  
     resources :project_materials
     resources :project_tools
 
@@ -16,6 +21,7 @@ Rails.application.routes.draw do
     
     post '/login', to: 'sessions#login'
     post '/signup', to: 'users#create'
+    get '/profile', to: 'profiles#show_current_user'
   
   end
   
