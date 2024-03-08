@@ -1,74 +1,62 @@
 class ProfilesController < ApplicationController
-before_action :set_user
-before_action :set_profile, only: [:show, :update, :destroy]
+  before_action :authenticate_request
+  before_action :set_profile, only: [:update, :destroy]
 
-# GET /users/:user_id/profile
-# Shows a specific profile 
+  # Shows the current user's profile or creates a default one if not present
+  def show_current_user
+    profile = @current_user.profile || create_default_profile_for(@current_user)
+    render_profile_json(profile)
+  end
 
-def show
-    profile = @user.profile
-    if profile.present?
-        render json: profile
-    else
-        render json: { error: "Profile not found" }, status: :not_found
-    end
-    end
-    
-# POST /users/:user_id/profile
-# Creates a new profile
-
-def create
-    @profile = @user.build_profile(profile_params)
-    if @profile.save
-    render json: @profile, status: :created
-    else
-    render json: @profile.errors, status: :unprocessable_entity
-    end
-end
-
-# PUT /users/:user_id/profile
-# Updates a profile
-
-def update
-    if @profile.nil?
-      render json: { error: "Profile not found" }, status: :not_found
-      return
-    end
-  
+  # Updates the current user's profile
+  def update
     if @profile.update(profile_params)
-      render json: @profile
+      render_profile_json(@profile)
     else
       render json: @profile.errors, status: :unprocessable_entity
     end
   end
-  
 
-# DELETE /users/:user_id/profile
-# Deletes a profile
+  # Creates a new profile for the user
+  def create
+    profile = @current_user.build_profile(profile_params)
+    if profile.save
+      render_profile_json(profile)
+    else
+      render json: profile.errors, status: :unprocessable_entity
+    end
+  end
 
-def destroy
+  # Deletes the current user's profile
+  def destroy
     @profile.destroy
     render json: { message: "Profile successfully deleted." }, status: :ok
   end
 
-private
+  private
 
-# Finds a user by id and sets it for the show, update and destroy actions
+  def set_profile
+    @profile = @current_user.profile
+    render(json: { error: "Profile not found" }, status: :not_found) unless @profile
+  end
 
-def set_user
-    @user = User.find_by(id: params[:user_id])
-    render(json: { error: "User not found" }, status: :not_found) and return unless @user
-end
+  def profile_params
+    params.require(:profile).permit(:bio)
+  end
 
-# Finds a profile by user id and sets it for the show, update and destroy actions
+  def render_profile_json(profile)
+    render json: {
+      id: profile.id,
+      bio: profile.bio,
+      user: {
+        firstName: @current_user.first_name, # Ensure these fields exist in your User model
+        lastName: @current_user.last_name
+      },
+      userId: @current_user.id
+    }
+  end
 
-def set_profile
-    @profile = @user&.profile
-end
-
-# Defines parameters
-
-def profile_params
-    params.permit(:bio)
-end
+  def create_default_profile_for(user)
+    user.create_profile(bio: "This is a default profile bio.")
+  end
 end
