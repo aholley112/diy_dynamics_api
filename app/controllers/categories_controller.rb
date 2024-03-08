@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
     before_action :set_category, only: [:show, :update, :destroy]
+    skip_before_action :authenticate_request, only: [:index, :search]
 
     # GET /categories
     # List all categories
@@ -13,6 +14,17 @@ class CategoriesController < ApplicationController
     def show
       render json: @category
     end
+
+    def search
+      if params[:term]
+        @categories = Category.where("category_name LIKE ?", "%#{params[:term]}%")
+      else
+        @categories = Category.all
+      end
+      render json: @categories
+    end
+  
+    
   
     # POST /categories
     # Create a new category
