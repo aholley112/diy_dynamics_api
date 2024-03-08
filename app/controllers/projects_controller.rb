@@ -41,6 +41,15 @@ class ProjectsController < ApplicationController
       end
     end
   
+    # def toggle_favorite
+    #   project = current_user.projects.find(params[:id])
+    #   if project.update(is_favorite_project: !project.is_favorite_project)
+    #     render json: project
+    #   else
+    #     render json: project.errors, status: :unprocessable_entity
+    #   end
+    # end
+
     # DELETE /projects/:id
     # Delete a project
 
