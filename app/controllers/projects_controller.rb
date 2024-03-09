@@ -10,6 +10,12 @@ class ProjectsController < ApplicationController
       render json: @projects, status: :ok
     end
   
+      def index_by_category
+        category = Category.find(params[:category_id])
+        projects = category.projects
+        render json: projects, include: :categories
+      end
+
     # GET /projects/:id
     # Show a specific project
 
