@@ -20,4 +20,29 @@ categories = [
   categories.each do |category|
     Category.find_or_create_by!(category_name: category[:category_name], description: category[:description])
   end
+
+  user = User.first
+
+  kids_crafts = Category.find_or_create_by!(category_name: 'Kids Crafts', description: 'Crafting projects for kids.')
   
+  rock_painting = Project.create!(
+    title: "Rock Painting",
+    description: "A simple and fun project for painting rocks. Great for kids to express their creativity.",
+    instructions: "Collect some smooth rocks from outdoors, use acrylic paints to create designs.",
+    est_time_to_completion: "2 hours",
+    user: user,
+    is_favorite_project: false
+  )
+  
+  finger_puppets = Project.create!(
+    title: "Finger Puppets",
+    description: "Create your own set of fun and engaging finger puppets using felt and other materials.",
+    instructions: "Cut felt into shapes of animals, glue parts together, and decorate.",
+    est_time_to_completion: "1 hour",
+    user: user,
+    is_favorite_project: false
+  )
+  
+ 
+  kids_crafts.projects << rock_painting
+  kids_crafts.projects << finger_puppets
