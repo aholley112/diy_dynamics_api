@@ -253,3 +253,39 @@ find_or_create_project('Upcycling', {
   user: user,
   is_favorite_project: false
 }, user)
+
+find_or_create_project('DIY Furniture', {
+  title: "Pallet Coffee Table",
+  description: "Construct a unique coffee table using reclaimed pallet wood, adding a rustic charm to your living room.",
+  instructions: "Disassemble a wooden pallet. Sand the wood to smooth out surfaces. Arrange the boards to form the tabletop and attach them together. Add legs using additional wood or pre-made legs. Finish with a stain or sealant.",
+  est_time_to_completion: "5 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('DIY Furniture', {
+  title: "Bookshelf from Crates",
+  description: "Create a customizable bookshelf using wooden crates. This project allows for easy adjustment and addition of shelves.",
+  instructions: "Collect or purchase several wooden crates. Sand and paint or stain the crates to your desired finish. Stack and secure the crates together in your preferred arrangement. Anchor the shelf to the wall for stability.",
+  est_time_to_completion: "4 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('DIY Furniture', {
+  title: "Floating Nightstand",
+  description: "Maximize space with a minimalist floating nightstand. Perfect for small bedrooms.",
+  instructions: "Cut a wooden board to your desired size for the nightstand. Sand and finish with paint or stain. Install brackets to the underside, ensuring they can support the weight. Mount securely to the wall beside your bed.",
+  est_time_to_completion: "3 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('DIY Furniture', {
+  title: "Pipe and Wood Desk",
+  description: "Combine industrial pipes with wood to create a sturdy, stylish desk with character.",
+  instructions: "Select your wood for the desktop and sand it smooth. Apply your chosen finish. Assemble the frame using metal pipes and fittings to create the legs and support structure. Attach the wood top to the frame.",
+  est_time_to_completion: "6 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
