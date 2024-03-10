@@ -289,3 +289,39 @@ find_or_create_project('DIY Furniture', {
   user: user,
   is_favorite_project: false
 }, user)
+
+find_or_create_project('DIY Home Improvement', {
+  title: "Backsplash Tile Installation",
+  description: "Transform your kitchen or bathroom with a new tile backsplash. This project can dramatically change the look of your space.",
+  instructions: "Measure your space and select tiles. Apply tile adhesive to the wall, then press tiles in place. Use spacers to ensure even gaps. After the adhesive sets, apply grout between tiles, then clean and seal.",
+  est_time_to_completion: "8 hours (over two days)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('DIY Home Improvement', {
+  title: "Custom Window Trim",
+  description: "Enhance your windows with custom trim, adding elegance and architectural interest to any room.",
+  instructions: "Measure your windows and cut trim pieces to size. Sand, paint, or stain the trim as desired. Nail the trim in place around your windows, then caulk and paint any seams or nail holes.",
+  est_time_to_completion: "4 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('DIY Home Improvement', {
+  title: "Recessed Lighting Installation",
+  description: "Brighten up your space with recessed lighting. This project involves electrical work, so ensure safety practices are followed.",
+  instructions: "Plan your layout and mark the ceiling. Cut holes for the lights. Wire the lighting according to manufacturer instructions and local codes. Insert the lights into the holes and secure. Always turn off power when working with electricity.",
+  est_time_to_completion: "8 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('DIY Home Improvement', {
+  title: "Refinishing Hardwood Floors",
+  description: "Restore the beauty of your hardwood floors by refinishing them. This project can significantly improve the look of your home.",
+  instructions: "Clear the room and sand the floors, starting with coarse-grit and moving to fine-grit sandpaper. Clean dust thoroughly. Apply stain if desired, then finish with a polyurethane sealant, following the product's directions for application and drying times.",
+  est_time_to_completion: "48 hours (over several days)",
+  user: user,
+  is_favorite_project: false
+}, user)
