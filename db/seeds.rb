@@ -325,3 +325,255 @@ find_or_create_project('DIY Home Improvement', {
   user: user,
   is_favorite_project: false
 }, user)
+
+find_or_create_project('Painting & Decorating', {
+  title: "Ombre Wall Painting",
+  description: "Create a stunning ombre effect on your walls, blending colors seamlessly for a modern and stylish look.",
+  instructions: "Choose two or three paint colors that blend well. Start with the lightest color at the top, applying it to about one-third of the wall. While still wet, blend the second color in the middle, using a dry brush to create a seamless transition. Repeat with the darkest color at the bottom.",
+  est_time_to_completion: "6 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Painting & Decorating', {
+  title: "DIY Canvas Art",
+  description: "Unleash your creativity by making your own canvas art. Use acrylics, oils, or mixed media to create artwork that complements your home decor.",
+  instructions: "Stretch canvas over a frame or purchase a pre-stretched canvas. Sketch your design lightly with a pencil. Paint your masterpiece using your chosen medium. Allow to dry completely before hanging.",
+  est_time_to_completion: "3 hours (plus drying time)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Painting & Decorating', {
+  title: "Stencil Accent Wall",
+  description: "Transform a plain wall into a feature piece with stencils. Use geometric shapes, floral patterns, or your own designs for a custom look.",
+  instructions: "Choose your stencil pattern and secure it to the wall with painter's tape. Apply paint with a roller or stencil brush. Carefully move and repeat the stencil to cover the desired area. Remove the stencil and touch up any edges.",
+  est_time_to_completion: "5 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Painting & Decorating', {
+  title: "Refurbished Vintage Frame",
+  description: "Give old picture frames a new life with this refurbishing project. Perfect for adding a personal touch to your photos or artwork.",
+  instructions: "Select a vintage frame and clean it thoroughly. Sand the frame lightly to prepare the surface. Paint or stain the frame in your chosen color. Once dry, add a sealant for durability. Insert your photo or art to display.",
+  est_time_to_completion: "4 hours (plus drying time)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Sewing & Textiles', {
+  title: "Handmade Quilt",
+  description: "Create a cozy, handmade quilt using various fabrics. This project allows for personalization in pattern and color.",
+  instructions: "Select fabrics and cut them into squares or rectangles. Arrange your pieces into a desired pattern. Sew the pieces together to form the top layer of the quilt. Attach batting and a backing layer, then quilt by sewing all layers together. Finish with binding around the edges.",
+  est_time_to_completion: "20 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Sewing & Textiles', {
+  title: "Decorative Throw Pillows",
+  description: "Sew decorative throw pillows to add a pop of color or texture to your living space. Choose from a variety of fabrics and designs.",
+  instructions: "Cut fabric to your desired pillow size, adding seam allowances. Sew the pieces together, leaving an opening for stuffing. Turn the pillowcase right side out, stuff with filling, then sew the opening closed.",
+  est_time_to_completion: "2 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Sewing & Textiles', {
+  title: "Custom Tote Bag",
+  description: "Design and sew your own tote bag, perfect for groceries, books, or everyday items. Personalize with pockets, fabric choices, and more.",
+  instructions: "Cut two rectangles of fabric for the bag body and two strips for handles. Sew the sides and bottom of the bag. Fold and sew the top hem. Attach the handles by sewing them to the inside of the bag's top edge. Add pockets or decorations as desired.",
+  est_time_to_completion: "3 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Sewing & Textiles', {
+  title: "Embroidered Linen Napkins",
+  description: "Elevate your dining experience with embroidered linen napkins. Add monograms, designs, or colorful patterns.",
+  instructions: "Cut linen fabric into squares of your desired napkin size, allowing for hemming. Hem the edges by folding them twice, ironing, and sewing in place. Use an embroidery hoop, needle, and floss to add your embroidery design to one corner of each napkin.",
+  est_time_to_completion: "4 hours (per napkin)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Jewelry Making', {
+  title: "Beaded Charm Bracelet",
+  description: "Create a personalized beaded charm bracelet. Mix and match beads and charms for a unique piece of jewelry.",
+  instructions: "Select beads and charms that fit your style. Using jewelry wire or elastic thread, string the beads and charms together. Use crimp beads to secure the ends, and add a clasp for closure on wire bracelets, or tie off elastic thread securely.",
+  est_time_to_completion: "1 hour",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Jewelry Making', {
+  title: "Handmade Statement Necklace",
+  description: "Craft a bold statement necklace using a variety of materials such as beads, chains, and pendants.",
+  instructions: "Design your necklace layout. String beads or attach pendants to your base chain, adjusting the length to your preference. Use jump rings to add layers or additional chains. Ensure all connections are secure.",
+  est_time_to_completion: "2 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Jewelry Making', {
+  title: "Wire Wrapped Rings",
+  description: "Fashion unique rings using wire wrapping techniques. Incorporate stones, beads, or crystals for decoration.",
+  instructions: "Choose a bead or stone as the centerpiece. Cut a length of jewelry wire and wrap it around a mandrel to form the ring shape. Secure the bead or stone by wrapping it with wire, creating a secure hold and decorative pattern.",
+  est_time_to_completion: "30 minutes",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Jewelry Making', {
+  title: "Leather Cuff Bracelet",
+  description: "Make a stylish leather cuff bracelet. Customize with stamps, paint, or stitching for a personalized touch.",
+  instructions: "Cut a strip of leather to your desired width and length for the cuff. Use leather stamps or paint to add designs. If desired, add stitching along the edges for detail. Punch holes at both ends and add a button stud or snaps for closure.",
+  est_time_to_completion: "3 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Pottery & Ceramics', {
+  title: "Hand-Built Clay Mugs",
+  description: "Create unique clay mugs using hand-building techniques. Personalize with textures and glazes.",
+  instructions: "Roll out clay to an even thickness. Cut a rectangle for the body and a strip for the handle. Wrap the rectangle into a cylinder and join the edges. Attach the handle. Bisque fire, apply glaze, and glaze fire.",
+  est_time_to_completion: "4 hours (plus drying and firing time)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Pottery & Ceramics', {
+  title: "Ceramic Tile Coasters",
+  description: "Design and create ceramic tile coasters. Customize with glazes or ceramic decals for a unique finish.",
+  instructions: "Roll out clay and cut into squares for coasters. Smooth edges and let dry. Bisque fire the tiles. Apply glaze or decals and glaze fire for a glossy finish. Add cork or felt to the bottom to prevent slipping.",
+  est_time_to_completion: "3 hours (plus drying and firing time)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Pottery & Ceramics', {
+  title: "Sculptural Vases",
+  description: "Explore sculptural forms by creating vases with organic shapes and textures. Experiment with different clay bodies and finishes.",
+  instructions: "Use coils, slabs, or pinching methods to form your vase. Incorporate textures using stamps, carving, or added clay elements. Allow to dry, then bisque fire. Apply oxides, underglazes, and glazes to enhance texture. Glaze fire.",
+  est_time_to_completion: "5 hours (plus drying and firing time)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Pottery & Ceramics', {
+  title: "Decorative Wall Plates",
+  description: "Make decorative ceramic plates to hang on the wall. Use sgraffito, mishima, or underglaze painting techniques for decoration.",
+  instructions: "Throw or hand-build a flat plate with a rolled-out slab of clay. Once leather-hard, sketch your design. Apply underglazes or slip. Carve or incise to reveal the design (sgraffito) or fill incised lines with contrasting slip (mishima). Bisque fire, clear glaze, and glaze fire.",
+  est_time_to_completion: "6 hours (plus drying and firing time)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Paper Crafts', {
+  title: "Origami Paper Cranes",
+  description: "Master the art of origami by folding paper cranes. This traditional craft symbolizes peace and happiness.",
+  instructions: "Start with a square sheet of origami paper. Follow a series of folds to create the crane shape. Pull the wings gently apart to inflate the body. Experiment with different paper sizes and colors.",
+  est_time_to_completion: "30 minutes",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Paper Crafts', {
+  title: "Handmade Greeting Cards",
+  description: "Create personalized greeting cards using card stock, decorative paper, and embellishments. Perfect for any occasion.",
+  instructions: "Cut card stock to your desired size. Decorate with layers of decorative paper, stamps, stickers, and handwritten messages. Add special touches like ribbon or glitter for a festive look.",
+  est_time_to_completion: "1 hour",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Paper Crafts', {
+  title: "Scrapbook Album",
+  description: "Preserve your memories in a handmade scrapbook album. Combine photos, ticket stubs, and other memorabilia with creative embellishments.",
+  instructions: "Select an album or create your own with card stock. Design each page around a theme or event, adding photos and items. Decorate with stickers, cutouts, and journaling to tell the story.",
+  est_time_to_completion: "Varies",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Paper Crafts', {
+  title: "Paper Mache Sculptures",
+  description: "Use the paper mache technique to create sculptures or decorative objects. A fun and messy project suitable for all ages.",
+  instructions: "Tear strips of newspaper. Mix flour and water to make paste. Dip the strips into the paste, then layer over a form or balloon. Let dry completely, then paint or decorate as desired.",
+  est_time_to_completion: "2 days (including drying time)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Cooking & Baking', {
+  title: "Artisan Sourdough Bread",
+  description: "Bake your own artisan sourdough bread from scratch. Learn to create and maintain a sourdough starter for bakery-quality bread at home.",
+  instructions: "Mix flour and water to create a sourdough starter. Feed it daily for at least 5 days. Once mature, mix your starter with flour, water, and salt to form the dough. Fold and shape, then let it rise. Bake in a preheated oven with steam.",
+  est_time_to_completion: "7 days for starter, 24 hours for bread",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Cooking & Baking', {
+  title: "Homemade Pasta",
+  description: "Learn the art of making homemade pasta. Roll out your own noodles for a fresh and delicious meal.",
+  instructions: "Combine flour and eggs to create a pasta dough. Knead until smooth. Let rest, then roll out to desired thickness. Cut into shapes or noodles. Boil in salted water until al dente. Serve with your favorite sauce.",
+  est_time_to_completion: "2 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Cooking & Baking', {
+  title: "French Macarons",
+  description: "Master the delicate process of making French macarons. Choose your favorite fillings and colors for these elegant treats.",
+  instructions: "Sift almond flour and powdered sugar. Whip egg whites and gradually add granulated sugar until stiff peaks form. Fold in the almond mixture. Pipe onto baking sheets. Let skin form before baking. Once cooled, fill with buttercream or ganache.",
+  est_time_to_completion: "3 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Cooking & Baking', {
+  title: "Decadent Chocolate Truffles",
+  description: "Create rich, decadent chocolate truffles with a variety of coatings. A perfect gift or treat for any chocolate lover.",
+  instructions: "Heat cream and pour over chopped chocolate. Stir until smooth. Chill until set, then scoop and roll into balls. Coat with cocoa powder, nuts, or tempered chocolate. Let set before serving.",
+  est_time_to_completion: "2 hours (plus chilling time)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Woodworking', {
+  title: "Simple Birdhouse",
+  description: "Build a simple birdhouse to welcome feathered friends to your garden. This project is great for beginners and can be customized with paint or decorations.",
+  instructions: "Cut wood panels to size for the sides, bottom, roof, and entrance. Assemble using nails or screws. Drill an entrance hole. Optionally, paint or decorate the birdhouse. Mount it in a suitable location.",
+  est_time_to_completion: "2 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Woodworking', {
+  title: "Custom Cutting Board",
+  description: "Craft a custom cutting board from hardwood. Choose woods of different colors for a striped or checkered pattern.",
+  instructions: "Select and cut hardwood strips to desired dimensions. Glue the strips side by side, clamping them tightly. Once dry, plane or sand the surface smooth. Cut to final size, round the edges, and apply a food-safe finish.",
+  est_time_to_completion: "5 hours (plus drying time)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Woodworking', {
+  title: "Floating Shelves",
+  description: "Add storage and display space to any room with custom floating shelves. These sleek, modern shelves appear to 'float' without visible supports.",
+  instructions: "Cut wood to your desired shelf length. Construct a hollow box or use solid wood for a simpler version. For the hidden bracket, attach a frame to the wall studs. Slide the shelf over the frame and secure. Finish with paint or stain.",
+  est_time_to_completion: "4 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+find_or_create_project('Woodworking', {
+  title: "Planter Box",
+  description: "Create a sturdy wooden planter box for flowers or vegetables. Customize the size to fit your space.",
+  instructions: "Cut wood planks and assemble into a box shape using screws or nails. Drill drainage holes in the bottom. Add feet or casters for mobility. Line with landscape fabric and fill with potting soil before planting.",
+  est_time_to_completion: "3 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
