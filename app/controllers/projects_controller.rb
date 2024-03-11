@@ -16,11 +16,24 @@ class ProjectsController < ApplicationController
         render json: projects, include: :categories
       end
 
+      def upload_image
+        project = Project.find(params[:id])
+    
+        if project.image.attach(params[:image])
+          render json: { message: "Image successfully uploaded." }, status: :ok
+        else
+          render json: { message: "Image upload failed." }, status: :unprocessable_entity
+        end
+      end
+      
     # GET /projects/:id
     # Show a specific project
 
     def show
-      render json: @project, status: :ok
+      project = Project.find(params[:id])
+      project_data = project.as_json
+      project_data[:image_url] = url_for(project.image) if project.image.attached?
+      render json: project_data
     end
   
     # POST /projects

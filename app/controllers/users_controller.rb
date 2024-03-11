@@ -16,6 +16,15 @@ class UsersController < ApplicationController
     def show
       render json: @user, status: :ok
     end
+
+    def upload_image
+      user = User.find(params[:id])
+      if user.image.attach(params[:image])
+        render json: { message: "Image uploaded successfully." }, status: :ok
+      else
+        render json: { message: "Image upload failed." }, status: :unprocessable_entity
+      end
+    end
   
     # POST /users
     # Create a new user
