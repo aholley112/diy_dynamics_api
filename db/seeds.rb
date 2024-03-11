@@ -19,33 +19,46 @@ categories = [
   
   user = User.first
 
-  categories.each do |category|
-    Category.find_or_create_by!(category_name: category[:category_name], description: category[:description])
+  categories.each do |category_attributes|
+    Category.find_or_create_by!(category_attributes)
   end
-
+  
   def find_or_create_project(category_name, project_attrs, user)
-    category = Category.find_or_create_by!(category_name: category_name)
+    category = Category.find_by(category_name: category_name)
+    return unless category
+  
     project = Project.find_or_create_by!(title: project_attrs[:title]) do |p|
       p.description = project_attrs[:description]
       p.instructions = project_attrs[:instructions]
       p.est_time_to_completion = project_attrs[:est_time_to_completion]
       p.user = user
       p.is_favorite_project = project_attrs[:is_favorite_project]
+      p.category = category
     end
   
-    category.projects << project unless category.projects.include?(project)
-end
-
-  find_or_create_project('Kids Crafts', {
+    if project.errors.any?
+      puts "Project not created due to errors: #{project.errors.full_messages.join(", ")}"
+    else
+      project
+    end
+  end
+  
+  rock_painting = find_or_create_project('Kids Crafts', {
     title: "Rock Painting",
     description: "A simple and fun project for painting rocks. Great for kids to express their creativity.",
     instructions: "Collect some smooth rocks from outdoors, use acrylic paints to create designs.",
     est_time_to_completion: "2 hours",
-    user: user,
     is_favorite_project: false
- }, user)
+  }, user)
   
-  find_or_create_project('Kids Crafts', {
+  if rock_painting
+    rock_painting.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/rock_painting.jpeg"), filename: 'rock_painting.jpeg')
+  else
+    puts 'Rock Painting project could not be created.'
+  end
+
+  
+  finger_puppets = find_or_create_project('Kids Crafts', {
     title: "Finger Puppets",
     description: "Create your own set of fun and engaging finger puppets using felt and other materials.",
     instructions: "Cut felt into shapes of animals, glue parts together, and decorate.",
@@ -54,7 +67,16 @@ end
     is_favorite_project: false
   }, user)
 
-  find_or_create_project('Kids Crafts', {
+  if finger_puppets
+    finger_puppets.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/finger_puppets.jpg"), filename: 'finger_puppets.jpg')
+    if finger_puppets.image.attached?
+      puts 'Image attached successfully.'
+    else
+      puts 'Image attachment failed.'
+    end
+  end
+
+  homemade_play_dough = find_or_create_project('Kids Crafts', {
     title: "Homemade Play Dough",
     description: "Create non-toxic, homemade play dough with just a few kitchen ingredients. A fun and safe craft for kids to sculpt and play with.",
     instructions: "Mix 2 cups of flour, 1/2 cup of salt, 2 tbsp of cream of tartar, 2 tbsp of vegetable oil, and 1 1/2 cups of boiling water. Add food coloring if desired. Knead until smooth.",
@@ -62,8 +84,15 @@ end
     user: user,
     is_favorite_project: false
   }, user)
+
+  if homemade_play_dough
+    homemade_play_dough.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/play_dough.jpeg"), filename: 'play_dough.jpeg')
+  else
+    puts 'Homemade Play Dough project could not be created.'
+  end
   
-  find_or_create_project('Kids Crafts', {
+  
+  paper_plate_animals = find_or_create_project('Kids Crafts', {
     title: "Paper Plate Animals",
     description: "Craft cute animals using paper plates and basic art supplies. A creative and simple project for kids of all ages.",
     instructions: "Cut paper plates to shape and decorate with paint, markers, colored paper, and googly eyes to create various animals. Use glue to assemble pieces.",
@@ -72,7 +101,12 @@ end
     is_favorite_project: false
   }, user)
   
-
+  if paper_plate_animals
+    paper_plate_animals.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/paper_plate_animals.jpeg"), filename: 'paper_plate_animals.jpeg')
+  else
+    puts 'Paper Plate Animals project could not be created.'
+  end
+  
 find_or_create_project('Gardening', {
   title: "Herb Garden",
   description: "Create your own herb garden with this simple project. Perfect for beginners!",
