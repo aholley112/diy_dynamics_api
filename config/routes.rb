@@ -2,9 +2,14 @@ Rails.application.routes.draw do
   
     resources :users do
       resource :profile, only: [:show, :create, :update, :destroy]
+      post 'upload_image', on: :member
     end
 
-  resources :projects 
+  resources :projects do
+  member do
+    post 'upload_image'
+  end
+end
   
     resources :project_materials
     resources :project_tools
