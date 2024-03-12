@@ -396,7 +396,7 @@ pipe_and_wood_desk = find_or_create_project('DIY Furniture', {
 pipe_and_wood_desk.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/pipe_and_wood_desk.jpeg"), filename: 'pipe_and_wood_desk.jpeg')
 
 
-find_or_create_project('DIY Home Improvement', {
+backsplash_tile_installation = find_or_create_project('DIY Home Improvement', {
   title: "Backsplash Tile Installation",
   description: "Transform your kitchen or bathroom with a new tile backsplash. This project can dramatically change the look of your space.",
   instructions: "Measure your space and select tiles. Apply tile adhesive to the wall, then press tiles in place. Use spacers to ensure even gaps. After the adhesive sets, apply grout between tiles, then clean and seal.",
@@ -405,7 +405,10 @@ find_or_create_project('DIY Home Improvement', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('DIY Home Improvement', {
+backsplash_tile_installation.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/backsplash_tile_installation.webp"), filename: 'backsplash_tile_installation.webp')
+
+
+custom_window_trim = find_or_create_project('DIY Home Improvement', {
   title: "Custom Window Trim",
   description: "Enhance your windows with custom trim, adding elegance and architectural interest to any room.",
   instructions: "Measure your windows and cut trim pieces to size. Sand, paint, or stain the trim as desired. Nail the trim in place around your windows, then caulk and paint any seams or nail holes.",
@@ -414,7 +417,10 @@ find_or_create_project('DIY Home Improvement', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('DIY Home Improvement', {
+custom_window_trim.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/custom_window_trim.jpeg"), filename: 'custom_window_trim.jpeg')
+
+
+recessed_lighting_installation = find_or_create_project('DIY Home Improvement', {
   title: "Recessed Lighting Installation",
   description: "Brighten up your space with recessed lighting. This project involves electrical work, so ensure safety practices are followed.",
   instructions: "Plan your layout and mark the ceiling. Cut holes for the lights. Wire the lighting according to manufacturer instructions and local codes. Insert the lights into the holes and secure. Always turn off power when working with electricity.",
@@ -423,7 +429,10 @@ find_or_create_project('DIY Home Improvement', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('DIY Home Improvement', {
+recessed_lighting_installation.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/recessed_lighting_installation.jpeg"), filename: 'recessed_lighting_installation.jpeg')
+
+
+refinishing_hardwood_floors = find_or_create_project('DIY Home Improvement', {
   title: "Refinishing Hardwood Floors",
   description: "Restore the beauty of your hardwood floors by refinishing them. This project can significantly improve the look of your home.",
   instructions: "Clear the room and sand the floors, starting with coarse-grit and moving to fine-grit sandpaper. Clean dust thoroughly. Apply stain if desired, then finish with a polyurethane sealant, following the product's directions for application and drying times.",
@@ -431,6 +440,9 @@ find_or_create_project('DIY Home Improvement', {
   user: user,
   is_favorite_project: false
 }, user)
+
+refinishing_hardwood_floors.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/refinishing_hardwood_floors.jpeg"), filename: 'refinishing_hardwood_floors.jpeg')
+
 
 find_or_create_project('Painting & Decorating', {
   title: "Ombre Wall Painting",
