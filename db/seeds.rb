@@ -13,7 +13,13 @@ categories = [
     { category_name: 'Pottery & Ceramics', description: 'Creating pottery and ceramics items like mugs, vases, and decorative pieces.' },
     { category_name: 'Paper Crafts', description: 'Projects involving paper, such as origami, scrapbooking, and card making.' },
     { category_name: 'Cooking & Baking', description: 'DIY projects in the kitchen, including recipes and cooking techniques.' },
-    { category_name: 'Woodworking', description: 'Projects involving woodworking.' }
+    { category_name: 'Woodworking', description: 'Projects involving woodworking.' },
+    { category_name: 'Sustainable Living & Eco Projects', description: 'Embrace sustainability with DIY projects that help reduce waste and promote eco-friendly practices.' },
+    { category_name: 'Health & Wellness DIY', description: 'Create your own health and wellness products, from natural skincare and homemade soaps to herbal teas and aromatherapy essentials.' },
+    {
+      category_name: 'Tech & Gadgets DIY',
+    description: 'Dive into the world of technology with DIY projects. Build or enhance gadgets, explore robotics, create smart home devices, and more. Perfect for enthusiasts looking to combine creativity with tech.'
+    }
     
   ]
   
@@ -107,7 +113,7 @@ categories = [
     puts 'Paper Plate Animals project could not be created.'
   end
   
-find_or_create_project('Gardening', {
+herb_garden = find_or_create_project('Gardening', {
   title: "Herb Garden",
   description: "Create your own herb garden with this simple project. Perfect for beginners!",
   instructions: "Choose a sunny spot, prepare the soil, plant herbs like basil, parsley, and mint, and ensure regular watering.",
@@ -116,7 +122,14 @@ find_or_create_project('Gardening', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Gardening', {
+if herb_garden
+  herb_garden.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/herb_garden.jpeg"), filename: 'herb_garden.jpeg')
+  puts 'Herb Garden project image attached successfully.'
+else
+  puts 'Herb Garden project could not be created.'
+end
+
+succulent_planter = find_or_create_project('Gardening', {
   title: "Succulent Planter",
   description: "Design a beautiful and low-maintenance succulent planter for your home or office.",
   instructions: "Select various succulents, prepare a planter with drainage, arrange the succulents, and add soil.",
@@ -125,7 +138,10 @@ find_or_create_project('Gardening', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Gardening', {
+succulent_planter.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/succulent_planter1.avif"), filename: 'succulent_planter1.avif')
+
+
+pollinator_garden = find_or_create_project('Gardening', {
   title: "Pollinator Garden",
   description: "Create a garden space dedicated to attracting and supporting pollinators like bees, butterflies, and hummingbirds. Choose plants that provide nectar and pollen throughout the growing season.",
   instructions: "Select a sunny location and prepare the soil. Plant a mix of native flowering plants that bloom at different times of the year. Include plants like lavender, bee balm, and milkweed. Add a water source, like a shallow birdbath.",
@@ -134,7 +150,9 @@ find_or_create_project('Gardening', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Gardening', {
+pollinator_garden.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/pollinator_garden.jpeg"), filename: 'pollinator_garden.jpeg')
+
+vegetable_container_garden = find_or_create_project('Gardening', {
   title: "Vegetable Container Garden",
   description: "Start a vegetable garden in containers, perfect for small spaces or urban gardening. Grow your own vegetables like tomatoes, peppers, and herbs.",
   instructions: "Choose containers with good drainage. Fill with high-quality potting soil. Plant seeds or seedlings for your chosen vegetables. Place in a location that receives at least 6 hours of sunlight daily. Water and fertilize as needed.",
@@ -143,7 +161,9 @@ find_or_create_project('Gardening', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Costumes & Cosplay', {
+vegetable_container_garden.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/vegetable_container_garden.jpeg"), filename: 'vegetable_container_garden.jpeg')
+
+diy_superhero_cape = find_or_create_project('Costumes & Cosplay', {
   title: "DIY Superhero Cape",
   description: "Create your own superhero cape with customizable colors and symbols.",
   instructions: "Choose your fabric, cut out the cape shape, sew the edges, and add your unique symbol with fabric paint or patches.",
@@ -152,7 +172,9 @@ find_or_create_project('Costumes & Cosplay', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Costumes & Cosplay', {
+diy_superhero_cape.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/diy_superhero_cape.jpeg"), filename: 'diy_superhero_cape.jpeg')
+
+homemade_robot_costume = find_or_create_project('Costumes & Cosplay', {
   title: "Homemade Robot Costume",
   description: "Construct a futuristic robot costume using recycled materials.",
   instructions: "Collect boxes of various sizes, silver spray paint, and duct tape. Assemble the boxes into a body suit and headpiece, spray paint everything silver, and add details with markers or more tape.",
@@ -161,7 +183,10 @@ find_or_create_project('Costumes & Cosplay', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Costumes & Cosplay', {
+homemade_robot_costume.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/homemade_robot_costume.jpeg"), filename: 'homemade_robot_costume.jpeg')
+
+
+fairy_wings = find_or_create_project('Costumes & Cosplay', {
   title: "Fairy Wings",
   description: "Design and create magical fairy wings for costumes or dress-up play. Customize with colors and decorations.",
   instructions: "Use wire hangers to form the wing shape and cover with sheer fabric. Secure with tape and paint with glitter and decorations. Attach elastic bands to wear.",
@@ -170,7 +195,10 @@ find_or_create_project('Costumes & Cosplay', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Costumes & Cosplay', {
+fairy_wings.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/fairy_wings.webp"), filename: 'fairy_wings.webp')
+
+
+pirate_hat = find_or_create_project('Costumes & Cosplay', {
   title: "Pirate Hat",
   description: "Craft your own pirate hat with cardboard and basic crafting materials for a swashbuckling costume accessory.",
   instructions: "Cut cardboard into the shape of a pirate hat. Paint black and add a skull and crossbones design. Attach a bandana or fabric around the base for added flair.",
@@ -179,8 +207,9 @@ find_or_create_project('Costumes & Cosplay', {
   is_favorite_project: false
 }, user)
 
+pirate_hat.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/pirate_hat.webp"), filename: 'pirate_hat.webp')
 
-find_or_create_project('Biology for Kids', {
+simple_plant_cell_model = find_or_create_project('Biology for Kids', {
   title: "Simple Plant Cell Model",
   description: "Build a 3D model of a plant cell using household items to learn about cell structure.",
   instructions: "Use a large, clear plastic container as the cell. Fill it with gelatin for cytoplasm. Use fruits like grapes (chloroplasts), a large lima bean (nucleus), and yarn (endoplasmic reticulum) to represent cell parts.",
@@ -189,7 +218,9 @@ find_or_create_project('Biology for Kids', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Biology for Kids', {
+simple_plant_cell_model.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/simple_plant_cell_model.png"), filename: 'simple_plant_cell_model.png')
+
+backyard_bug_hunt = find_or_create_project('Biology for Kids', {
   title: "Backyard Bug Hunt",
   description: "Explore your backyard to find and identify different insects and learn about their habitats.",
   instructions: "Equip with a magnifying glass and a notebook. Gently catch insects using a net or by hand wearing gloves. Observe, identify, and release. Record your findings with drawings or photos.",
@@ -198,7 +229,9 @@ find_or_create_project('Biology for Kids', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Biology for Kids', {
+backyard_bug_hunt.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/backyard_bug_hunt.jpeg"), filename: 'backyard_bug_hunt.jpeg')
+
+diy_microscope_slides = find_or_create_project('Biology for Kids', {
   title: "DIY Microscope Slides",
   description: "Learn about the microscopic world by creating your own slides from household items or backyard finds.",
   instructions: "Collect thin, transparent objects like onion skin, leaves, or pond water. Place them on a glass slide and cover with a cover slip. Observe under a microscope.",
@@ -207,7 +240,9 @@ find_or_create_project('Biology for Kids', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Biology for Kids', {
+diy_microscope_slides.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/diy_microscope_slides.webp"), filename: 'diy_microscope_slides.webp')
+
+homemade_volcano_experiment = find_or_create_project('Biology for Kids', {
   title: "Homemade Volcano Experiment",
   description: "Understand chemical reactions by creating a homemade volcano that erupts with baking soda and vinegar.",
   instructions: "Build a volcano structure with clay or dirt. Create a cavity at the top and place a container inside. Mix baking soda, food coloring, and dish soap in the container. Pour vinegar to start the eruption.",
@@ -216,7 +251,10 @@ find_or_create_project('Biology for Kids', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Home Decor', {
+homemade_volcano_experiment.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/homemade_volcano_experiment.jpeg"), filename: 'homemade_volcano_experiment.jpeg')
+
+
+geometric_wall_art = find_or_create_project('Home Decor', {
   title: "Geometric Wall Art",
   description: "Create a stunning piece of geometric wall art using just painters tape and your choice of paint colors. This project can add a modern touch to any room in your home.",
   instructions: "Choose your canvas size. Apply painters tape in a geometric pattern across the canvas. Paint each section with your chosen colors. Once dry, carefully remove the tape to reveal your design. Mount your artwork on the wall with appropriate hanging materials.",
@@ -225,7 +263,9 @@ find_or_create_project('Home Decor', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Home Decor', {
+geometric_wall_art.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/geometric_wall_art.webp"), filename: 'geometric_wall_art.webp')
+
+diy_scented_candles = find_or_create_project('Home Decor', {
   title: "DIY Scented Candles",
   description: "Craft your own scented candles to cozy up your space or to give as thoughtful handmade gifts. Customize with your favorite scents and colors.",
   instructions: "Melt soy wax in a double boiler, add fragrance oils once melted, and dye if desired. Center the wick in a clean jar and carefully pour in the melted wax. Allow to cool and set completely before trimming the wick and using.",
@@ -234,7 +274,9 @@ find_or_create_project('Home Decor', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Home Decor', {
+diy_scented_candles.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/diy_scented_candles.jpeg"), filename: 'diy_scented_candles.jpeg')
+
+rustic_wood_shelf = find_or_create_project('Home Decor', {
   title: "Rustic Wood Shelf",
   description: "Create a rustic wood shelf for an elegant addition to any room, using reclaimed wood for a touch of charm.",
   instructions: "Select a piece of reclaimed wood and sand it down. Apply a finish of your choice. Attach brackets and mount the shelf to a wall with anchors appropriate for your wall type.",
@@ -243,7 +285,10 @@ find_or_create_project('Home Decor', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Home Decor', {
+rustic_wood_shelf.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/rustic_wood_shelf.jpeg"), filename: 'rustic_wood_shelf.jpeg')
+
+
+hand_painted_cushion_covers = find_or_create_project('Home Decor', {
   title: "Hand-Painted Cushion Covers",
   description: "Customize your living space with hand-painted cushion covers. Use fabric paints or markers to create designs that match your decor.",
   instructions: "Choose plain cushion covers as your canvas. Sketch your design with a pencil. Paint your design with fabric paint or markers. Allow to dry completely before using.",
@@ -252,7 +297,10 @@ find_or_create_project('Home Decor', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Upcycling', {
+hand_painted_cushion_covers.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/hand_painted_cushion_covers.jpeg"), filename: 'hand_painted_cushion_covers.jpeg')
+
+
+wine_cork_board = find_or_create_project('Upcycling', {
   title: "Wine Cork Board",
   description: "Turn your collection of wine corks into a functional and stylish cork board. Perfect for hanging notes, photos, or even jewelry.",
   instructions: "Arrange wine corks in a frame or on a flat surface to create your desired shape and size. Once satisfied with the layout, use a hot glue gun to secure the corks together and to the backing. Attach hanging hardware to the back if needed.",
@@ -261,7 +309,10 @@ find_or_create_project('Upcycling', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Upcycling', {
+wine_cork_board.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/wine_cork_board.jpeg"), filename: 'wine_cork_board.jpeg')
+
+
+mason_jar_herb_garden = find_or_create_project('Upcycling', {
   title: "Mason Jar Herb Garden",
   description: "Repurpose old mason jars into a beautiful indoor herb garden. This project is not only decorative but also allows you to grow fresh herbs year-round.",
   instructions: "Fill the bottom of each mason jar with pebbles for drainage, then add potting soil and your choice of herb seeds or small plants. Place in a sunny spot and water regularly. Consider using a hanging shelf or wall mount for display.",
@@ -270,7 +321,10 @@ find_or_create_project('Upcycling', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Upcycling', {
+mason_jar_herb_garden.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/mason_jar_herb_garden.jpeg"), filename: 'mason_jar_herb_garden.jpeg')
+
+
+tin_can_lanterns = find_or_create_project('Upcycling', {
   title: "Tin Can Lanterns",
   description: "Transform empty tin cans into beautiful lanterns for your patio or garden with just a few simple steps.",
   instructions: "Remove labels and clean tin cans. Fill with water and freeze. Once frozen, use a hammer and nail to make designs. Thaw, dry, and paint the cans. Place candles inside and enjoy.",
@@ -279,7 +333,10 @@ find_or_create_project('Upcycling', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Upcycling', {
+tin_can_lanterns.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/tin_can_lanterns.jpeg"), filename: 'tin_can_lanterns.jpeg')
+
+
+denim_tote_bag = find_or_create_project('Upcycling', {
   title: "Denim Tote Bag",
   description: "Repurpose old denim jeans into a stylish tote bag. A durable and fashionable way to recycle.",
   instructions: "Cut the legs off a pair of jeans. Sew the bottom shut. Create straps from the leg material or use a belt. Add pockets or decorations as desired.",
@@ -288,7 +345,10 @@ find_or_create_project('Upcycling', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('DIY Furniture', {
+denim_tote_bag.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/denim_tote_bag.jpeg"), filename: 'denim_tote_bag.jpeg')
+
+
+pallet_coffee_table = find_or_create_project('DIY Furniture', {
   title: "Pallet Coffee Table",
   description: "Construct a unique coffee table using reclaimed pallet wood, adding a rustic charm to your living room.",
   instructions: "Disassemble a wooden pallet. Sand the wood to smooth out surfaces. Arrange the boards to form the tabletop and attach them together. Add legs using additional wood or pre-made legs. Finish with a stain or sealant.",
@@ -297,7 +357,10 @@ find_or_create_project('DIY Furniture', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('DIY Furniture', {
+pallet_coffee_table.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/pallet_coffee_table.jpeg"), filename: 'pallet_coffee_table.jpeg')
+
+
+bookshelf_from_crates = find_or_create_project('DIY Furniture', {
   title: "Bookshelf from Crates",
   description: "Create a customizable bookshelf using wooden crates. This project allows for easy adjustment and addition of shelves.",
   instructions: "Collect or purchase several wooden crates. Sand and paint or stain the crates to your desired finish. Stack and secure the crates together in your preferred arrangement. Anchor the shelf to the wall for stability.",
@@ -306,7 +369,10 @@ find_or_create_project('DIY Furniture', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('DIY Furniture', {
+bookshelf_from_crates.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/bookshelf_from_crates.jpeg"), filename: 'bookshelf_from_crates.jpeg')
+
+
+floating_nightstand = find_or_create_project('DIY Furniture', {
   title: "Floating Nightstand",
   description: "Maximize space with a minimalist floating nightstand. Perfect for small bedrooms.",
   instructions: "Cut a wooden board to your desired size for the nightstand. Sand and finish with paint or stain. Install brackets to the underside, ensuring they can support the weight. Mount securely to the wall beside your bed.",
@@ -315,7 +381,10 @@ find_or_create_project('DIY Furniture', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('DIY Furniture', {
+floating_nightstand.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/floating_nightstand.jpeg"), filename: 'floating_nightstand.jpeg')
+
+
+pipe_and_wood_desk = find_or_create_project('DIY Furniture', {
   title: "Pipe and Wood Desk",
   description: "Combine industrial pipes with wood to create a sturdy, stylish desk with character.",
   instructions: "Select your wood for the desktop and sand it smooth. Apply your chosen finish. Assemble the frame using metal pipes and fittings to create the legs and support structure. Attach the wood top to the frame.",
@@ -323,6 +392,9 @@ find_or_create_project('DIY Furniture', {
   user: user,
   is_favorite_project: false
 }, user)
+
+pipe_and_wood_desk.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/pipe_and_wood_desk.jpeg"), filename: 'pipe_and_wood_desk.jpeg')
+
 
 find_or_create_project('DIY Home Improvement', {
   title: "Backsplash Tile Installation",
