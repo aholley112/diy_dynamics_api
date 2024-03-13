@@ -57,12 +57,7 @@ categories = [
     is_favorite_project: false
   }, user)
   
-  if rock_painting
     rock_painting.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/rock_painting.jpeg"), filename: 'rock_painting.jpeg')
-  else
-    puts 'Rock Painting project could not be created.'
-  end
-
   
   finger_puppets = find_or_create_project('Kids Crafts', {
     title: "Finger Puppets",
@@ -73,14 +68,8 @@ categories = [
     is_favorite_project: false
   }, user)
 
-  if finger_puppets
     finger_puppets.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/finger_puppets.jpg"), filename: 'finger_puppets.jpg')
-    if finger_puppets.image.attached?
-      puts 'Image attached successfully.'
-    else
-      puts 'Image attachment failed.'
-    end
-  end
+
 
   homemade_play_dough = find_or_create_project('Kids Crafts', {
     title: "Homemade Play Dough",
@@ -91,13 +80,8 @@ categories = [
     is_favorite_project: false
   }, user)
 
-  if homemade_play_dough
     homemade_play_dough.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/play_dough.jpeg"), filename: 'play_dough.jpeg')
-  else
-    puts 'Homemade Play Dough project could not be created.'
-  end
-  
-  
+
   paper_plate_animals = find_or_create_project('Kids Crafts', {
     title: "Paper Plate Animals",
     description: "Craft cute animals using paper plates and basic art supplies. A creative and simple project for kids of all ages.",
@@ -107,11 +91,8 @@ categories = [
     is_favorite_project: false
   }, user)
   
-  if paper_plate_animals
     paper_plate_animals.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/paper_plate_animals.jpeg"), filename: 'paper_plate_animals.jpeg')
-  else
-    puts 'Paper Plate Animals project could not be created.'
-  end
+
   
 herb_garden = find_or_create_project('Gardening', {
   title: "Herb Garden",
@@ -122,12 +103,7 @@ herb_garden = find_or_create_project('Gardening', {
   is_favorite_project: false
 }, user)
 
-if herb_garden
   herb_garden.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/herb_garden.jpeg"), filename: 'herb_garden.jpeg')
-  puts 'Herb Garden project image attached successfully.'
-else
-  puts 'Herb Garden project could not be created.'
-end
 
 succulent_planter = find_or_create_project('Gardening', {
   title: "Succulent Planter",
@@ -444,7 +420,7 @@ refinishing_hardwood_floors = find_or_create_project('DIY Home Improvement', {
 refinishing_hardwood_floors.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/refinishing_hardwood_floors.jpeg"), filename: 'refinishing_hardwood_floors.jpeg')
 
 
-find_or_create_project('Painting & Decorating', {
+ombre_wall_painting = find_or_create_project('Painting & Decorating', {
   title: "Ombre Wall Painting",
   description: "Create a stunning ombre effect on your walls, blending colors seamlessly for a modern and stylish look.",
   instructions: "Choose two or three paint colors that blend well. Start with the lightest color at the top, applying it to about one-third of the wall. While still wet, blend the second color in the middle, using a dry brush to create a seamless transition. Repeat with the darkest color at the bottom.",
@@ -453,7 +429,10 @@ find_or_create_project('Painting & Decorating', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Painting & Decorating', {
+ombre_wall_painting.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/ombre_wall_painting.jpeg"), filename: 'ombre_wall_painting.jpeg')
+
+
+diy_canvas_art = find_or_create_project('Painting & Decorating', {
   title: "DIY Canvas Art",
   description: "Unleash your creativity by making your own canvas art. Use acrylics, oils, or mixed media to create artwork that complements your home decor.",
   instructions: "Stretch canvas over a frame or purchase a pre-stretched canvas. Sketch your design lightly with a pencil. Paint your masterpiece using your chosen medium. Allow to dry completely before hanging.",
@@ -462,7 +441,10 @@ find_or_create_project('Painting & Decorating', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Painting & Decorating', {
+diy_canvas_art.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/diy_canvas_art.webp"), filename: 'diy_canvas_art.webp')
+
+
+stencil_accent_wall = find_or_create_project('Painting & Decorating', {
   title: "Stencil Accent Wall",
   description: "Transform a plain wall into a feature piece with stencils. Use geometric shapes, floral patterns, or your own designs for a custom look.",
   instructions: "Choose your stencil pattern and secure it to the wall with painter's tape. Apply paint with a roller or stencil brush. Carefully move and repeat the stencil to cover the desired area. Remove the stencil and touch up any edges.",
@@ -471,7 +453,10 @@ find_or_create_project('Painting & Decorating', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Painting & Decorating', {
+stencil_accent_wall.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/stencil_accent_wall.jpeg"), filename: 'stencil_accent_wall.jpeg')
+
+
+refurbished_vintage_frame = find_or_create_project('Painting & Decorating', {
   title: "Refurbished Vintage Frame",
   description: "Give old picture frames a new life with this refurbishing project. Perfect for adding a personal touch to your photos or artwork.",
   instructions: "Select a vintage frame and clean it thoroughly. Sand the frame lightly to prepare the surface. Paint or stain the frame in your chosen color. Once dry, add a sealant for durability. Insert your photo or art to display.",
@@ -480,7 +465,9 @@ find_or_create_project('Painting & Decorating', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Sewing & Textiles', {
+refurbished_vintage_frame.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/refurbished_vintage_frame.jpeg"), filename: 'refurbished_vintage_frame.jpeg')
+
+handmade_quilt = find_or_create_project('Sewing & Textiles', {
   title: "Handmade Quilt",
   description: "Create a cozy, handmade quilt using various fabrics. This project allows for personalization in pattern and color.",
   instructions: "Select fabrics and cut them into squares or rectangles. Arrange your pieces into a desired pattern. Sew the pieces together to form the top layer of the quilt. Attach batting and a backing layer, then quilt by sewing all layers together. Finish with binding around the edges.",
@@ -489,7 +476,10 @@ find_or_create_project('Sewing & Textiles', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Sewing & Textiles', {
+handmade_quilt.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/handmade_quilt.jpg"), filename: 'handmade_quilt.jpg')
+
+
+decorative_throw_pillows = find_or_create_project('Sewing & Textiles', {
   title: "Decorative Throw Pillows",
   description: "Sew decorative throw pillows to add a pop of color or texture to your living space. Choose from a variety of fabrics and designs.",
   instructions: "Cut fabric to your desired pillow size, adding seam allowances. Sew the pieces together, leaving an opening for stuffing. Turn the pillowcase right side out, stuff with filling, then sew the opening closed.",
@@ -498,7 +488,10 @@ find_or_create_project('Sewing & Textiles', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Sewing & Textiles', {
+decorative_throw_pillows.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/decorative_throw_pillows.webp"), filename: 'decorative_throw_pillows.webp')
+
+
+custom_tote_bag = find_or_create_project('Sewing & Textiles', {
   title: "Custom Tote Bag",
   description: "Design and sew your own tote bag, perfect for groceries, books, or everyday items. Personalize with pockets, fabric choices, and more.",
   instructions: "Cut two rectangles of fabric for the bag body and two strips for handles. Sew the sides and bottom of the bag. Fold and sew the top hem. Attach the handles by sewing them to the inside of the bag's top edge. Add pockets or decorations as desired.",
@@ -507,7 +500,10 @@ find_or_create_project('Sewing & Textiles', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Sewing & Textiles', {
+custom_tote_bag.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/custom_tote_bags.jpeg"), filename: 'custom_tote_bags.jpeg')
+
+
+embroidered_linen_napkins = find_or_create_project('Sewing & Textiles', {
   title: "Embroidered Linen Napkins",
   description: "Elevate your dining experience with embroidered linen napkins. Add monograms, designs, or colorful patterns.",
   instructions: "Cut linen fabric into squares of your desired napkin size, allowing for hemming. Hem the edges by folding them twice, ironing, and sewing in place. Use an embroidery hoop, needle, and floss to add your embroidery design to one corner of each napkin.",
@@ -516,7 +512,9 @@ find_or_create_project('Sewing & Textiles', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Jewelry Making', {
+embroidered_linen_napkins.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/embroidered_linen_napkins.jpeg"), filename: 'embroidered_linen_napkins.jpeg')
+
+beaded_charm_bracelet = find_or_create_project('Jewelry Making', {
   title: "Beaded Charm Bracelet",
   description: "Create a personalized beaded charm bracelet. Mix and match beads and charms for a unique piece of jewelry.",
   instructions: "Select beads and charms that fit your style. Using jewelry wire or elastic thread, string the beads and charms together. Use crimp beads to secure the ends, and add a clasp for closure on wire bracelets, or tie off elastic thread securely.",
@@ -525,7 +523,10 @@ find_or_create_project('Jewelry Making', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Jewelry Making', {
+beaded_charm_bracelet.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/beaded_charm_bracelet.webp"), filename: 'beaded_charm_bracelet.webp')
+
+
+handmade_statement_necklace = find_or_create_project('Jewelry Making', {
   title: "Handmade Statement Necklace",
   description: "Craft a bold statement necklace using a variety of materials such as beads, chains, and pendants.",
   instructions: "Design your necklace layout. String beads or attach pendants to your base chain, adjusting the length to your preference. Use jump rings to add layers or additional chains. Ensure all connections are secure.",
@@ -534,7 +535,10 @@ find_or_create_project('Jewelry Making', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Jewelry Making', {
+handmade_statement_necklace.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/handmade_statement_necklace.webp"), filename: 'handmade_statement_necklace.webp')
+
+
+wire_wrapped_rings = find_or_create_project('Jewelry Making', {
   title: "Wire Wrapped Rings",
   description: "Fashion unique rings using wire wrapping techniques. Incorporate stones, beads, or crystals for decoration.",
   instructions: "Choose a bead or stone as the centerpiece. Cut a length of jewelry wire and wrap it around a mandrel to form the ring shape. Secure the bead or stone by wrapping it with wire, creating a secure hold and decorative pattern.",
@@ -543,7 +547,10 @@ find_or_create_project('Jewelry Making', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Jewelry Making', {
+wire_wrapped_rings.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/wire_wrapped_rings.avif"), filename: 'wire_wrapped_rings.avif')
+
+
+leather_cuff_bracelet = find_or_create_project('Jewelry Making', {
   title: "Leather Cuff Bracelet",
   description: "Make a stylish leather cuff bracelet. Customize with stamps, paint, or stitching for a personalized touch.",
   instructions: "Cut a strip of leather to your desired width and length for the cuff. Use leather stamps or paint to add designs. If desired, add stitching along the edges for detail. Punch holes at both ends and add a button stud or snaps for closure.",
@@ -551,6 +558,9 @@ find_or_create_project('Jewelry Making', {
   user: user,
   is_favorite_project: false
 }, user)
+
+leather_cuff_bracelet.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/leather_cuff_bracelet.jpeg"), filename: 'leather_cuff_bracelet.jpeg')
+
 
 find_or_create_project('Pottery & Ceramics', {
   title: "Hand-Built Clay Mugs",
