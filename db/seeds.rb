@@ -216,7 +216,7 @@ diy_microscope_slides = find_or_create_project('Biology for Kids', {
   is_favorite_project: false
 }, user)
 
-diy_microscope_slides.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/diy_microscope_slides.webp"), filename: 'diy_microscope_slides.webp')
+diy_microscope_slides.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/diy_microscope_slides.jpeg"), filename: 'diy_microscope_slides.jpeg')
 
 homemade_volcano_experiment = find_or_create_project('Biology for Kids', {
   title: "Homemade Volcano Experiment",
@@ -562,7 +562,7 @@ leather_cuff_bracelet = find_or_create_project('Jewelry Making', {
 leather_cuff_bracelet.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/leather_cuff_bracelet.jpeg"), filename: 'leather_cuff_bracelet.jpeg')
 
 
-find_or_create_project('Pottery & Ceramics', {
+hand_built_clay_mugs = find_or_create_project('Pottery & Ceramics', {
   title: "Hand-Built Clay Mugs",
   description: "Create unique clay mugs using hand-building techniques. Personalize with textures and glazes.",
   instructions: "Roll out clay to an even thickness. Cut a rectangle for the body and a strip for the handle. Wrap the rectangle into a cylinder and join the edges. Attach the handle. Bisque fire, apply glaze, and glaze fire.",
@@ -571,7 +571,9 @@ find_or_create_project('Pottery & Ceramics', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Pottery & Ceramics', {
+hand_built_clay_mugs.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/hand_built_clay_mugs.avif"), filename: 'hand_built_clay_mugs.avif')
+
+ceramic_tile_coasters = find_or_create_project('Pottery & Ceramics', {
   title: "Ceramic Tile Coasters",
   description: "Design and create ceramic tile coasters. Customize with glazes or ceramic decals for a unique finish.",
   instructions: "Roll out clay and cut into squares for coasters. Smooth edges and let dry. Bisque fire the tiles. Apply glaze or decals and glaze fire for a glossy finish. Add cork or felt to the bottom to prevent slipping.",
@@ -580,7 +582,10 @@ find_or_create_project('Pottery & Ceramics', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Pottery & Ceramics', {
+ceramic_tile_coasters.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/ceramic_tile_coasters.webp"), filename: 'ceramic_tile_coasters.webp')
+
+
+sculptural_vases = find_or_create_project('Pottery & Ceramics', {
   title: "Sculptural Vases",
   description: "Explore sculptural forms by creating vases with organic shapes and textures. Experiment with different clay bodies and finishes.",
   instructions: "Use coils, slabs, or pinching methods to form your vase. Incorporate textures using stamps, carving, or added clay elements. Allow to dry, then bisque fire. Apply oxides, underglazes, and glazes to enhance texture. Glaze fire.",
@@ -589,7 +594,10 @@ find_or_create_project('Pottery & Ceramics', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Pottery & Ceramics', {
+sculptural_vases.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/sculptural_vases.webp"), filename: 'sculptural_vases.webp')
+
+
+decorative_wall_plates = find_or_create_project('Pottery & Ceramics', {
   title: "Decorative Wall Plates",
   description: "Make decorative ceramic plates to hang on the wall. Use sgraffito, mishima, or underglaze painting techniques for decoration.",
   instructions: "Throw or hand-build a flat plate with a rolled-out slab of clay. Once leather-hard, sketch your design. Apply underglazes or slip. Carve or incise to reveal the design (sgraffito) or fill incised lines with contrasting slip (mishima). Bisque fire, clear glaze, and glaze fire.",
@@ -597,6 +605,8 @@ find_or_create_project('Pottery & Ceramics', {
   user: user,
   is_favorite_project: false
 }, user)
+
+decorative_wall_plates.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/decorative_wall_plates.avif"), filename: 'decorative_wall_plates.avif')
 
 find_or_create_project('Paper Crafts', {
   title: "Origami Paper Cranes",
