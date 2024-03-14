@@ -16,9 +16,8 @@ categories = [
     { category_name: 'Woodworking', description: 'Projects involving woodworking.' },
     { category_name: 'Sustainable Living & Eco Projects', description: 'Embrace sustainability with DIY projects that help reduce waste and promote eco-friendly practices.' },
     { category_name: 'Health & Wellness DIY', description: 'Create your own health and wellness products, from natural skincare and homemade soaps to herbal teas and aromatherapy essentials.' },
-    {
-      category_name: 'Tech & Gadgets DIY',
-    description: 'Dive into the world of technology with DIY projects. Build or enhance gadgets, explore robotics, create smart home devices, and more. Perfect for enthusiasts looking to combine creativity with tech.'
+    { category_name: 'Tech & Gadgets DIY',
+    description: 'Dive into the world of technology with DIY projects. Perfect for enthusiasts looking to combine creativity with tech.'
     }
     
   ]
@@ -39,8 +38,9 @@ categories = [
       p.est_time_to_completion = project_attrs[:est_time_to_completion]
       p.user = user
       p.is_favorite_project = project_attrs[:is_favorite_project]
-      p.category = category
     end
+
+    project.categories << category unless project.categories.include?(category)
   
     if project.errors.any?
       puts "Project not created due to errors: #{project.errors.full_messages.join(", ")}"
@@ -772,7 +772,7 @@ upcycled_newspaper_baskets = find_or_create_project('Sustainable Living & Eco Pr
   is_favorite_project: false
 }, user)
 
-upcycled_newspaper_baskets.image.attach(io: File.open("/path/to/your/image/upcycled_newspaper_baskets.jpeg"), filename: 'upcycled_newspaper_baskets.jpeg')
+upcycled_newspaper_baskets.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/upcycled_newspaper_baskets.jpeg"), filename: 'upcycled_newspaper_baskets.jpeg')
 
 
 upcyled_glass_bottle_art = find_or_create_project('Sustainable Living & Eco Projects', {
@@ -784,7 +784,7 @@ upcyled_glass_bottle_art = find_or_create_project('Sustainable Living & Eco Proj
   is_favorite_project: false
 }, user)
 
-upcyled_glass_bottle_art.image.attach(io: File.open("/path/to/your/image/upcycled_glass_bottle_art.jpeg"), filename: 'upcycled_glass_bottle_art.jpeg')
+upcyled_glass_bottle_art.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/upcycled_glass_bottle_art.jpeg"), filename: 'upcycled_glass_bottle_art.jpeg')
 
 homemade_beeswax_food_wraps = find_or_create_project('Sustainable Living & Eco Projects', {
   title: "Homemade Beeswax Food Wraps",
@@ -795,7 +795,7 @@ homemade_beeswax_food_wraps = find_or_create_project('Sustainable Living & Eco P
   is_favorite_project: false
 }, user)
 
-homemade_beeswax_food_wraps.image.attach(io: File.open("/path/to/your/image/homemade_beeswax_wraps.webp"), filename: 'homemade_beeswax_wraps.webp')
+homemade_beeswax_food_wraps.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/homemade_beeswax_wraps.webp"), filename: 'homemade_beeswax_wraps.webp')
 
 homemade_essential_oils = find_or_create_project('Health & Wellness DIY', {
   title: "Homemade Essential Oils",
@@ -806,7 +806,7 @@ homemade_essential_oils = find_or_create_project('Health & Wellness DIY', {
   is_favorite_project: false
 }, user)
 
-homemade_essential_oils.image.attach(io: File.open("/path/to/your/image/homemade_essential_oils.jpeg"), filename: 'homemade_essential_oils.jpeg')
+homemade_essential_oils.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/homemade_essential_oils.jpeg"), filename: 'homemade_essential_oils.jpeg')
 
 diy_natural_soap = find_or_create_project('Health & Wellness DIY', {
   title: "DIY Natural Soap",
@@ -817,7 +817,7 @@ diy_natural_soap = find_or_create_project('Health & Wellness DIY', {
   is_favorite_project: false
 }, user)
 
-diy_natural_soap.image.attach(io: File.open("/path/to/your/image/diy_natural_soap.jpeg"), filename: 'diy_natural_soap.jpeg')
+diy_natural_soap.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/diy_natural_soap.jpeg"), filename: 'diy_natural_soap.jpeg')
 
 homemade_herbal_tea_blend = find_or_create_project('Health & Wellness DIY', {
   title: "Homemade Herbal Tea Blend",
@@ -828,7 +828,7 @@ homemade_herbal_tea_blend = find_or_create_project('Health & Wellness DIY', {
   is_favorite_project: false
 }, user)
 
-homemade_herbal_tea_blend.image.attach(io: File.open("/path/to/your/image/herbal_tea_blend.jpeg"), filename: 'herbal_tea_blend.jpeg')
+homemade_herbal_tea_blend.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/herbal_tea_blend.jpeg"), filename: 'herbal_tea_blend.jpeg')
 
 aromatherapy_diffuser_blend = find_or_create_project('Health & Wellness DIY', {
   title: "Aromatherapy Diffuser Blend",
@@ -839,7 +839,7 @@ aromatherapy_diffuser_blend = find_or_create_project('Health & Wellness DIY', {
   is_favorite_project: false
 }, user)
 
-aromatherapy_diffuser_blend.image.attach(io: File.open("/path/to/your/image/aromatherapy_diffuser_blend.jpeg"), filename: 'aromatherapy_diffuser_blend.jpeg')
+aromatherapy_diffuser_blend.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/aromatherapy_diffuser_blend.jpeg"), filename: 'aromatherapy_diffuser_blend.jpeg')
 
 raspberry_pi_smart_mirror = find_or_create_project('Tech & Gadgets DIY', {
   title: "Raspberry Pi Smart Mirror",
@@ -850,7 +850,7 @@ raspberry_pi_smart_mirror = find_or_create_project('Tech & Gadgets DIY', {
   is_favorite_project: false
 }, user)
 
-raspberry_pi_smart_mirror.image.attach(io: File.open("/path/to/your/image/raspberry_pi_smart_mirror.jpeg"), filename: 'raspberry_pi_smart_mirror.jpeg')
+raspberry_pi_smart_mirror.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/raspberry_pi_smart_mirror.jpeg"), filename: 'raspberry_pi_smart_mirror.jpeg')
 
 homemade_phone_charger = find_or_create_project('Tech & Gadgets DIY', {
   title: "Homemade Phone Charger",
@@ -861,7 +861,7 @@ homemade_phone_charger = find_or_create_project('Tech & Gadgets DIY', {
   is_favorite_project: false
 }, user)
 
-homemade_phone_charger.image.attach(io: File.open("/path/to/your/image/homemade_phone_charger.jpeg"), filename: 'homemade_phone_charger.jpeg')
+homemade_phone_charger.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/homemade_phone_charger.jpeg"), filename: 'homemade_phone_charger.jpeg')
 
 arduino_robotic_arm = find_or_create_project('Tech & Gadgets DIY', {
   title: "Arduino Robotic Arm",
@@ -872,7 +872,7 @@ arduino_robotic_arm = find_or_create_project('Tech & Gadgets DIY', {
   is_favorite_project: false
 }, user)
 
-arduino_robotic_arm.image.attach(io: File.open("/path/to/your/image/arduino_robotic_arm.webp"), filename: 'arduino_robotic_arm.webp')
+arduino_robotic_arm.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/arduino_robotic_arm.webp"), filename: 'arduino_robotic_arm.webp')
 
 smart_home_automation_system = find_or_create_project('Tech & Gadgets DIY', {
   title: "Smart Home Automation System",
@@ -883,5 +883,5 @@ smart_home_automation_system = find_or_create_project('Tech & Gadgets DIY', {
   is_favorite_project: false
 }, user)
 
-smart_home_automation_system.image.attach(io: File.open("/path/to/your/image/smart_home_automation_system.jpeg"), filename: 'smart_home_automation_system.jpeg')
+smart_home_automation_system.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/smart_home_automation_system.jpeg"), filename: 'smart_home_automation_system.jpeg')
 
