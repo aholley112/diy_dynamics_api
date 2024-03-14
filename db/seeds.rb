@@ -656,7 +656,7 @@ paper_mache_sculptures = find_or_create_project('Paper Crafts', {
 paper_mache_sculptures.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/paper_mache_sculptures.jpeg"), filename: 'paper_mache_sculptures.jpeg')
 
 
-find_or_create_project('Cooking & Baking', {
+artisan_sourdough_bread = find_or_create_project('Cooking & Baking', {
   title: "Artisan Sourdough Bread",
   description: "Bake your own artisan sourdough bread from scratch. Learn to create and maintain a sourdough starter for bakery-quality bread at home.",
   instructions: "Mix flour and water to create a sourdough starter. Feed it daily for at least 5 days. Once mature, mix your starter with flour, water, and salt to form the dough. Fold and shape, then let it rise. Bake in a preheated oven with steam.",
@@ -665,7 +665,10 @@ find_or_create_project('Cooking & Baking', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Cooking & Baking', {
+artisan_sourdough_bread.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/artisan_sourdough_bread.jpeg"), filename: 'artisan_sourdough_bread.jpeg')
+
+
+homemade_pasta = find_or_create_project('Cooking & Baking', {
   title: "Homemade Pasta",
   description: "Learn the art of making homemade pasta. Roll out your own noodles for a fresh and delicious meal.",
   instructions: "Combine flour and eggs to create a pasta dough. Knead until smooth. Let rest, then roll out to desired thickness. Cut into shapes or noodles. Boil in salted water until al dente. Serve with your favorite sauce.",
@@ -674,7 +677,10 @@ find_or_create_project('Cooking & Baking', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Cooking & Baking', {
+homemade_pasta.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/homemade_pasta.jpeg"), filename: 'homemade_pasta.jpeg')
+
+
+french_macarons = find_or_create_project('Cooking & Baking', {
   title: "French Macarons",
   description: "Master the delicate process of making French macarons. Choose your favorite fillings and colors for these elegant treats.",
   instructions: "Sift almond flour and powdered sugar. Whip egg whites and gradually add granulated sugar until stiff peaks form. Fold in the almond mixture. Pipe onto baking sheets. Let skin form before baking. Once cooled, fill with buttercream or ganache.",
@@ -683,7 +689,10 @@ find_or_create_project('Cooking & Baking', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Cooking & Baking', {
+french_macarons.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/french_macarons.jpeg"), filename: 'french_macarons.jpeg')
+
+
+decadent_chocolate_truffles = find_or_create_project('Cooking & Baking', {
   title: "Decadent Chocolate Truffles",
   description: "Create rich, decadent chocolate truffles with a variety of coatings. A perfect gift or treat for any chocolate lover.",
   instructions: "Heat cream and pour over chopped chocolate. Stir until smooth. Chill until set, then scoop and roll into balls. Coat with cocoa powder, nuts, or tempered chocolate. Let set before serving.",
@@ -692,7 +701,10 @@ find_or_create_project('Cooking & Baking', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Woodworking', {
+decadent_chocolate_truffles.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/decadent_chocolate_truffles.jpeg"), filename: 'decadent_chocolate_truffles.jpeg')
+
+
+simple_birdhouse = find_or_create_project('Woodworking', {
   title: "Simple Birdhouse",
   description: "Build a simple birdhouse to welcome feathered friends to your garden. This project is great for beginners and can be customized with paint or decorations.",
   instructions: "Cut wood panels to size for the sides, bottom, roof, and entrance. Assemble using nails or screws. Drill an entrance hole. Optionally, paint or decorate the birdhouse. Mount it in a suitable location.",
@@ -701,7 +713,10 @@ find_or_create_project('Woodworking', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Woodworking', {
+simple_birdhouse.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/simple_birdhouse.jpeg"), filename: 'simple_birdhouse.jpeg')
+
+
+custom_cutting_board = find_or_create_project('Woodworking', {
   title: "Custom Cutting Board",
   description: "Craft a custom cutting board from hardwood. Choose woods of different colors for a striped or checkered pattern.",
   instructions: "Select and cut hardwood strips to desired dimensions. Glue the strips side by side, clamping them tightly. Once dry, plane or sand the surface smooth. Cut to final size, round the edges, and apply a food-safe finish.",
@@ -710,7 +725,10 @@ find_or_create_project('Woodworking', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Woodworking', {
+custom_cutting_board.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/custom_cutting_board.jpeg"), filename: 'custom_cutting_board.jpeg')
+
+
+floating_shelves = find_or_create_project('Woodworking', {
   title: "Floating Shelves",
   description: "Add storage and display space to any room with custom floating shelves. These sleek, modern shelves appear to 'float' without visible supports.",
   instructions: "Cut wood to your desired shelf length. Construct a hollow box or use solid wood for a simpler version. For the hidden bracket, attach a frame to the wall studs. Slide the shelf over the frame and secure. Finish with paint or stain.",
@@ -719,7 +737,10 @@ find_or_create_project('Woodworking', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Woodworking', {
+floating_shelves.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/floating_shelves.jpeg"), filename: 'floating_shelves.jpeg')
+
+
+planter_box = find_or_create_project('Woodworking', {
   title: "Planter Box",
   description: "Create a sturdy wooden planter box for flowers or vegetables. Customize the size to fit your space.",
   instructions: "Cut wood planks and assemble into a box shape using screws or nails. Drill drainage holes in the bottom. Add feet or casters for mobility. Line with landscape fabric and fill with potting soil before planting.",
@@ -727,3 +748,140 @@ find_or_create_project('Woodworking', {
   user: user,
   is_favorite_project: false
 }, user)
+
+planter_box.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/planter_box.jpeg"), filename: 'planter_box.jpeg')
+
+diy_rain_barrel_system = find_or_create_project('Sustainable Living & Eco Projects', {
+  title: "DIY Rain Barrel System",
+  description: "Collect rainwater to conserve water and reduce runoff with a homemade rain barrel system.",
+  instructions: "Obtain a large barrel or drum with a lid. Cut a hole near the top for a downspout diverter. Install the diverter on your downspout to direct rainwater into the barrel. Add a spigot near the bottom for easy access to collected water. Use the stored rainwater for gardening and outdoor chores.",
+  est_time_to_completion: "2 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+diy_rain_barrel_system.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/diy_rain_barrel_system.jpeg"), filename: 'diy_rain_barrel_system.jpeg')
+
+
+upcycled_newspaper_baskets = find_or_create_project('Sustainable Living & Eco Projects', {
+  title: "Upcycled Newspaper Baskets",
+  description: "Turn old newspapers into stylish and eco-friendly storage baskets. Perfect for organizing magazines, toys, or craft supplies.",
+  instructions: "Roll newspaper into tight tubes and secure with glue or tape. Coil the tubes to form the base of the basket, then continue coiling and shaping to build up the sides. Seal with a layer of decoupage glue for durability and water resistance.",
+  est_time_to_completion: "1 hour (plus drying time)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+upcycled_newspaper_baskets.image.attach(io: File.open("/path/to/your/image/upcycled_newspaper_baskets.jpeg"), filename: 'upcycled_newspaper_baskets.jpeg')
+
+
+upcyled_glass_bottle_art = find_or_create_project('Sustainable Living & Eco Projects', {
+  title: "Upcycled Glass Bottle Art",
+  description: "Transform discarded glass bottles into decorative art pieces. A creative way to repurpose and beautify your space.",
+  instructions: "Clean and remove labels from glass bottles. Cut, shape, and sand as desired. Paint, etch, or decoupage to add visual interest. Display your creations as standalone pieces or functional art.",
+  est_time_to_completion: "2 hours (plus drying time)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+upcyled_glass_bottle_art.image.attach(io: File.open("/path/to/your/image/upcycled_glass_bottle_art.jpeg"), filename: 'upcycled_glass_bottle_art.jpeg')
+
+homemade_beeswax_food_wraps = find_or_create_project('Sustainable Living & Eco Projects', {
+  title: "Homemade Beeswax Food Wraps",
+  description: "Replace plastic cling film with homemade beeswax wraps. An eco-friendly alternative for storing food.",
+  instructions: "Melt beeswax, resin, and jojoba oil together. Brush the mixture onto cotton fabric. Bake to set. Use the wraps to cover bowls, wrap sandwiches, or store produce. Wash with cool water and mild soap.",
+  est_time_to_completion: "1 hour",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+homemade_beeswax_food_wraps.image.attach(io: File.open("/path/to/your/image/homemade_beeswax_wraps.webp"), filename: 'homemade_beeswax_wraps.webp')
+
+homemade_essential_oils = find_or_create_project('Health & Wellness DIY', {
+  title: "Homemade Essential Oils",
+  description: "Extract aromatic essential oils from herbs and flowers for use in aromatherapy and natural skincare.",
+  instructions: "Harvest fresh herbs or flowers. Place in a carrier oil (e.g., olive oil or almond oil) in a glass jar. Let sit in a warm, sunny spot for several weeks. Strain out the plant material. Store the infused oil in a dark glass bottle.",
+  est_time_to_completion: "2 weeks",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+homemade_essential_oils.image.attach(io: File.open("/path/to/your/image/homemade_essential_oils.jpeg"), filename: 'homemade_essential_oils.jpeg')
+
+diy_natural_soap = find_or_create_project('Health & Wellness DIY', {
+  title: "DIY Natural Soap",
+  description: "Craft luxurious handmade soap bars using natural ingredients and essential oils. Perfect for sensitive skin.",
+  instructions: "Melt soap base and add essential oils, herbs, or exfoliants as desired. Pour into molds and let cool and harden. Unmold and allow to cure for several weeks before use.",
+  est_time_to_completion: "1 hour (plus curing time)",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+diy_natural_soap.image.attach(io: File.open("/path/to/your/image/diy_natural_soap.jpeg"), filename: 'diy_natural_soap.jpeg')
+
+homemade_herbal_tea_blend = find_or_create_project('Health & Wellness DIY', {
+  title: "Homemade Herbal Tea Blend",
+  description: "Blend dried herbs and flowers to create custom herbal tea blends for relaxation, digestion, or energy.",
+  instructions: "Select dried herbs and flowers with desired properties. Mix in proportions to achieve desired flavor and effect. Store in an airtight container. Steep in hot water and enjoy.",
+  est_time_to_completion: "30 minutes",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+homemade_herbal_tea_blend.image.attach(io: File.open("/path/to/your/image/herbal_tea_blend.jpeg"), filename: 'herbal_tea_blend.jpeg')
+
+aromatherapy_diffuser_blend = find_or_create_project('Health & Wellness DIY', {
+  title: "Aromatherapy Diffuser Blend",
+  description: "Create custom blends of essential oils for use in aromatherapy diffusers. Relax, uplift, or energize your mood naturally.",
+  instructions: "Combine essential oils in a glass bottle. Experiment with different combinations and proportions to create your desired scent profile. Add a few drops to your diffuser and enjoy the aromatic benefits.",
+  est_time_to_completion: "15 minutes",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+aromatherapy_diffuser_blend.image.attach(io: File.open("/path/to/your/image/aromatherapy_diffuser_blend.jpeg"), filename: 'aromatherapy_diffuser_blend.jpeg')
+
+raspberry_pi_smart_mirror = find_or_create_project('Tech & Gadgets DIY', {
+  title: "Raspberry Pi Smart Mirror",
+  description: "Build a smart mirror using a Raspberry Pi. Display weather, news, calendar, and more while checking your reflection.",
+  instructions: "Install a two-way mirror over a monitor connected to a Raspberry Pi. Customize the software to display desired widgets and information. Mount the mirror in your desired location and power it up.",
+  est_time_to_completion: "8 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+raspberry_pi_smart_mirror.image.attach(io: File.open("/path/to/your/image/raspberry_pi_smart_mirror.jpeg"), filename: 'raspberry_pi_smart_mirror.jpeg')
+
+homemade_phone_charger = find_or_create_project('Tech & Gadgets DIY', {
+  title: "Homemade Phone Charger",
+  description: "Build a portable phone charger using rechargeable batteries and a voltage regulator. Perfect for on-the-go charging.",
+  instructions: "Connect rechargeable batteries to a voltage regulator to ensure stable output. Attach a USB port for device compatibility. Encase the components in a durable housing and add an on/off switch for convenience.",
+  est_time_to_completion: "3 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+homemade_phone_charger.image.attach(io: File.open("/path/to/your/image/homemade_phone_charger.jpeg"), filename: 'homemade_phone_charger.jpeg')
+
+arduino_robotic_arm = find_or_create_project('Tech & Gadgets DIY', {
+  title: "Arduino Robotic Arm",
+  description: "Build a robotic arm using Arduino and servo motors. Explore basic robotics and programming concepts.",
+  instructions: "Assemble servo motors into a robotic arm structure. Connect the servos to an Arduino board and program the arm's movements using Arduino IDE. Experiment with different configurations and control methods.",
+  est_time_to_completion: "10 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+arduino_robotic_arm.image.attach(io: File.open("/path/to/your/image/arduino_robotic_arm.webp"), filename: 'arduino_robotic_arm.webp')
+
+smart_home_automation_system = find_or_create_project('Tech & Gadgets DIY', {
+  title: "Smart Home Automation System",
+  description: "Create a custom smart home automation system using Raspberry Pi or Arduino. Control lights, appliances, and more from your smartphone.",
+  instructions: "Set up a Raspberry Pi or Arduino as the central hub for your smart home system. Connect sensors and actuators to control various devices. Install and configure software for remote access and automation. Enjoy the convenience of a smart home setup.",
+  est_time_to_completion: "15 hours",
+  user: user,
+  is_favorite_project: false
+}, user)
+
+smart_home_automation_system.image.attach(io: File.open("/path/to/your/image/smart_home_automation_system.jpeg"), filename: 'smart_home_automation_system.jpeg')
+
