@@ -608,7 +608,7 @@ decorative_wall_plates = find_or_create_project('Pottery & Ceramics', {
 
 decorative_wall_plates.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/decorative_wall_plates.avif"), filename: 'decorative_wall_plates.avif')
 
-find_or_create_project('Paper Crafts', {
+origami_paper_cranes = find_or_create_project('Paper Crafts', {
   title: "Origami Paper Cranes",
   description: "Master the art of origami by folding paper cranes. This traditional craft symbolizes peace and happiness.",
   instructions: "Start with a square sheet of origami paper. Follow a series of folds to create the crane shape. Pull the wings gently apart to inflate the body. Experiment with different paper sizes and colors.",
@@ -617,7 +617,10 @@ find_or_create_project('Paper Crafts', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Paper Crafts', {
+origami_paper_cranes.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/origami_paper_cranes.jpeg"), filename: 'origami_paper_cranes.jpeg')
+
+
+handmade_greeting_cards = find_or_create_project('Paper Crafts', {
   title: "Handmade Greeting Cards",
   description: "Create personalized greeting cards using card stock, decorative paper, and embellishments. Perfect for any occasion.",
   instructions: "Cut card stock to your desired size. Decorate with layers of decorative paper, stamps, stickers, and handwritten messages. Add special touches like ribbon or glitter for a festive look.",
@@ -626,7 +629,10 @@ find_or_create_project('Paper Crafts', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Paper Crafts', {
+handmade_greeting_cards.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/handmade_greeting_cards.webp"), filename: 'handmade_greeting_cards.webp')
+
+
+scrapbook_album = find_or_create_project('Paper Crafts', {
   title: "Scrapbook Album",
   description: "Preserve your memories in a handmade scrapbook album. Combine photos, ticket stubs, and other memorabilia with creative embellishments.",
   instructions: "Select an album or create your own with card stock. Design each page around a theme or event, adding photos and items. Decorate with stickers, cutouts, and journaling to tell the story.",
@@ -635,7 +641,10 @@ find_or_create_project('Paper Crafts', {
   is_favorite_project: false
 }, user)
 
-find_or_create_project('Paper Crafts', {
+scrapbook_album.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/scrapbook_album.jpeg"), filename: 'scrapbook_album.jpeg')
+
+
+paper_mache_sculptures = find_or_create_project('Paper Crafts', {
   title: "Paper Mache Sculptures",
   description: "Use the paper mache technique to create sculptures or decorative objects. A fun and messy project suitable for all ages.",
   instructions: "Tear strips of newspaper. Mix flour and water to make paste. Dip the strips into the paste, then layer over a form or balloon. Let dry completely, then paint or decorate as desired.",
@@ -643,6 +652,9 @@ find_or_create_project('Paper Crafts', {
   user: user,
   is_favorite_project: false
 }, user)
+
+paper_mache_sculptures.image.attach(io: File.open("/Users/amandafeely/Documents/diy_images/paper_mache_sculptures.jpeg"), filename: 'paper_mache_sculptures.jpeg')
+
 
 find_or_create_project('Cooking & Baking', {
   title: "Artisan Sourdough Bread",
