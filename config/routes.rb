@@ -14,7 +14,7 @@ end
     resources :project_materials
     resources :project_tools
 
-    get 'categories/search', to: 'categories#search'
+    get '/categories/search', to: 'categories#search'
 
     resources :categories do
       get 'projects', to: 'projects#index_by_category'
