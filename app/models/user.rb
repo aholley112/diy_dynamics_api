@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
     has_one_attached :image
+    
 
     # Validations
 
@@ -13,5 +14,12 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_many :projects
+  after_create :create_user_profile
+
+  private
+
+  def create_user_profile
+    Profile.create(user: self)
+  end
  
 end
