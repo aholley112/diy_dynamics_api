@@ -11,9 +11,9 @@ class ProjectsController < ApplicationController
     end
   
       def index_by_category
-        category = Category.find(params[:category_id])
+          category = Category.find(params[:id]) 
         projects = category.projects
-        render json: projects, include: :categories
+        render json: projects
       end
 
       def upload_image
@@ -34,6 +34,18 @@ class ProjectsController < ApplicationController
       project_data = project.as_json
       project_data[:image_url] = url_for(project.image) if project.image.attached?
       render json: project_data
+    end
+
+    def add_to_favorites
+      current_user = User.find(params[:user_id]) # This should be the current logged in user
+      # Add logic to create the favorite relation, for example:
+      favorite = current_user.favorites.create(project: @project)
+  
+      if favorite.persisted?
+        render json: { message: "Project successfully added to favorites." }, status: :ok
+      else
+        render json: favorite.errors, status: :unprocessable_entity
+      end
     end
   
     # POST /projects
@@ -60,14 +72,6 @@ class ProjectsController < ApplicationController
       end
     end
   
-    # def toggle_favorite
-    #   project = current_user.projects.find(params[:id])
-    #   if project.update(is_favorite_project: !project.is_favorite_project)
-    #     render json: project
-    #   else
-    #     render json: project.errors, status: :unprocessable_entity
-    #   end
-    # end
 
     # DELETE /projects/:id
     # Delete a project
@@ -88,7 +92,7 @@ class ProjectsController < ApplicationController
   
     # Defines parameters
     def project_params
-      params.permit(:title, :description, :is_favorite_project, :instructions, :est_time_to_completion, :user_id)
+      params.permit(:title, :description, :is_favorite_project, :instructions, :est_time_to_completion, :user_id, :image, material_names: [], tool_names: [])
     end
   end
   
