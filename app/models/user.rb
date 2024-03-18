@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   has_many :projects
   after_create :create_user_profile
+  has_many :favorites
+  has_many :favorite_projects, through: :favorites, source: :project
 
   private
 
