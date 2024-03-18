@@ -18,8 +18,9 @@ has_and_belongs_to_many :categories, join_table: 'categories_projects'
   has_many :project_materials, dependent: :destroy
   has_many :project_tools, dependent: :destroy
   
+  has_many :favorites
+  has_many :favorited_by_users, through: :favorites, source: :user
 
-  
   # Validations
   validates :title, presence: true
   validates :description, presence: true
