@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
     before_action :set_project, only: [:show, :update, :destroy]
-    skip_before_action :authenticate_request, only: [:index, :show] 
+    skip_before_action :authenticate_request, only: [:index, :show, :index_by_category] 
   
     # GET /projects
     # List all projects
@@ -11,8 +11,9 @@ class ProjectsController < ApplicationController
     end
   
       def index_by_category
-          category = Category.find(params[:id]) 
+        category = Category.find(params[:id]) 
         projects = category.projects
+        puts "Fetched projects: #{projects.inspect}"  
         render json: projects
       end
 
@@ -53,13 +54,21 @@ class ProjectsController < ApplicationController
 
     def create
       @project = Project.new(project_params)
-  
+    
       if @project.save
-        render json: @project, status: :created
+        # Fetch category_id from params and associate the project with the category
+        category = Category.find_by(id: params[:category_id])
+        if category
+          @project.categories << category
+          render json: @project, status: :created
+        else
+          render json: { error: "Category not found" }, status: :not_found
+        end
       else
         render json: @project.errors, status: :unprocessable_entity
       end
     end
+    
   
     # PUT /projects/:id
     # Update a project
@@ -92,7 +101,17 @@ class ProjectsController < ApplicationController
   
     # Defines parameters
     def project_params
-      params.permit(:title, :description, :is_favorite_project, :instructions, :est_time_to_completion, :user_id, :image, material_names: [], tool_names: [])
-    end
+      params.permit(
+        :title, 
+        :description, 
+        :instructions, 
+        :est_time_to_completion, 
+        :user_id,
+        :material_names,  
+        :tool_names,      
+        :image,
+      
+      )
   end
+end
   
