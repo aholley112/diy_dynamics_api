@@ -50,37 +50,3 @@ def find_or_create_project(category_name, project_attrs, user)
   end
 end
 
-rock_painting = find_or_create_project('Kids Crafts', {
-  title: "Rock Painting",
-  description: "A simple and fun project for painting rocks. Great for kids to express their creativity.",
-  instructions: "Collect some smooth rocks from outdoors, use acrylic paints to create designs.",
-  est_time_to_completion: "2 hours",
-  is_favorite_project: false
-}, user)
-
-finger_puppets = find_or_create_project('Kids Crafts', {
-  title: "Finger Puppets",
-  description: "Create your own set of fun and engaging finger puppets using felt and other materials.",
-  instructions: "Cut felt into shapes of animals, glue parts together, and decorate.",
-  est_time_to_completion: "1 hour",
-  user: user,
-  is_favorite_project: false
-}, user)
-
-homemade_play_dough = find_or_create_project('Kids Crafts', {
-  title: "Homemade Play Dough",
-  description: "Create non-toxic, homemade play dough with just a few kitchen ingredients. A fun and safe craft for kids to sculpt and play with.",
-  instructions: "Mix 2 cups of flour, 1/2 cup of salt, 2 tbsp of cream of tartar, 2 tbsp of vegetable oil, and 1 1/2 cups of boiling water. Add food coloring if desired. Knead until smooth.",
-  est_time_to_completion: "1 hour",
-  user: user,
-  is_favorite_project: false
-}, user)
-
-paper_plate_animals = find_or_create_project('Kids Crafts', {
-  title: "Paper Plate Animals",
-  description: "Craft cute animals using paper plates and basic art supplies. A creative and simple project for kids of all ages.",
-  instructions: "Cut paper plates to shape and decorate with paint, markers, colored paper, and googly eyes to create various animals. Use glue to assemble pieces.",
-  est_time_to_completion: "2 hours",
-  user: user,
-  is_favorite_project: false
-}, user)
