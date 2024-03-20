@@ -31,6 +31,7 @@ gem "bootsnap", require: false
 gem 'bcrypt'
 gem 'jwt'
 gem 'blueprinter'
+gem 'devise'
 
 group :production do
   gem 'pg'
@@ -49,6 +50,7 @@ gem 'factory_bot_rails'
 gem 'faker'
 gem 'shoulda-matchers'
 gem "sqlite3", "~> 1.4"
+
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
 end
