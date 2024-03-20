@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
       user_data = {
         id: user.id,
         username: user.username,
-        email: user.email
+        email: user.email,
+        isAdmin: user.admin || false
       }
       render json: { token: token, user: user_data }, status: :ok
     else
@@ -17,8 +18,6 @@ class SessionsController < ApplicationController
     end
   end
 
-
-  
     private
   
     def jwt_encode(payload, exp = 24.hours.from_now)
