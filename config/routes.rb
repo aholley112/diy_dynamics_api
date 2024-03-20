@@ -31,6 +31,10 @@ Rails.application.routes.draw do
     get 'search', to: 'categories#search', on: :collection
   end
 
+  namespace :admin do
+    resources :categories  # Add more resources as needed for admin management
+  end
+  
   # Other resources
   resources :materials
   resources :tools 
