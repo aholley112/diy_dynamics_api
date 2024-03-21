@@ -25,6 +25,8 @@ class UsersController < ApplicationController
         render json: { message: "Image upload failed." }, status: :unprocessable_entity
       end
     end
+
+    
   
     # POST /users
     # Create a new user
