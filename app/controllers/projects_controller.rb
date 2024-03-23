@@ -33,15 +33,15 @@ class ProjectsController < ApplicationController
 
   def show
     project = Project.find(params[:id])
-    project_data = project.as_json
-    project_data[:image_url] = url_for(project.image) if project.image.attached?
-    project_data[:userId] = project.user_id # Add this line to include user_id in the response
-    render json: project_data
+  project_data = project.as_json(include: { categories: { only: [:id, :category_name] } })
+  project_data[:image_url] = url_for(project.image) if project.image.attached?
+  project_data[:userId] = project.user_id
+
+  render json: project_data
   end
 
   def add_to_favorites
-    current_user = User.find(params[:user_id]) # This should be the current logged in user
-    # Add logic to create the favorite relation, for example:
+    current_user = User.find(params[:user_id])  
     favorite = current_user.favorites.create(project: @project)
 
     if favorite.persisted?
