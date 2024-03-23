@@ -27,9 +27,14 @@ Rails.application.routes.draw do
 
   # Category routes
   resources :categories do
-    get 'projects', to: 'projects#index_by_category', on: :member
-    get 'search', to: 'categories#search', on: :collection
+    member do
+      get 'projects', to: 'projects#index_by_category'
+    end
+    collection do
+      get 'search', to: 'categories#search'
+    end
   end
+
 
   namespace :admin do
     resources :categories  # Add more resources as needed for admin management

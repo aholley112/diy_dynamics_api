@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::API
   before_action :authenticate_request
+  attr_reader :current_user
   
 
   private
+
 
   # Authenticate incoming requests using JWT
   def authenticate_request
@@ -17,6 +19,7 @@ class ApplicationController < ActionController::API
       render json: { errors: 'Unauthorized' }, status: :unauthorized
     end
   end
+  
 
   # Decode JWT token
   def jwt_decode(token)

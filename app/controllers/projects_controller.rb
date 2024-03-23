@@ -76,12 +76,22 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      render json: @project, status: :ok
-    else
-      render :edit
-    end
-  end
 
+    if params[:category_id]
+      new_category = Category.find_by(id: params[:category_id])
+      if new_category
+        @project.categories.clear
+        @project.categories << new_category
+      end
+    end
+
+    # Respond with the updated project details
+    render json: @project, status: :ok
+  else
+    # If the project couldn't be updated, respond with the errors
+    render json: @project.errors, status: :unprocessable_entity
+  end
+end
 
   # DELETE /projects/:id
   # Delete a project
@@ -96,10 +106,9 @@ class ProjectsController < ApplicationController
 
   def check_owner
     unless @project.user_id == current_user.id
-      redirect_to projects_url, alert: 'You are not authorized to edit this project.'
+      render json: { error: 'You are not authorized to edit this project.' }, status: :forbidden
     end
   end
-
 
   # Finds a project by id and sets it for the show, update and destroy actions
 
