@@ -8,14 +8,20 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
-    render json: @projects, status: :ok
+    projects_with_image_url = @projects.map do |project|
+      project.as_json.merge(image_url: project.image.attached? ? url_for(project.image) : nil)
+    end
+    render json: projects_with_image_url, status: :ok
   end
 
     def index_by_category
       category = Category.find(params[:id]) 
       projects = category.projects
-      puts "Fetched projects: #{projects.inspect}"  
-      render json: projects
+      projects_with_image_url = projects.map do |project|
+        project.as_json.merge(image_url: project.image.attached? ? url_for(project.image) : nil)
+      end
+      render json: projects_with_image_url
+    
     end
 
     def upload_image
@@ -34,7 +40,7 @@ class ProjectsController < ApplicationController
   def show
     project = Project.find(params[:id])
   project_data = project.as_json(include: { categories: { only: [:id, :category_name] } })
-  project_data[:image_url] = url_for(project.image) if project.image.attached?
+  project_data[:image_url] = project.image.attached? ? url_for(project.image) : nil
   project_data[:userId] = project.user_id
 
   render json: project_data
