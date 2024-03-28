@@ -17,8 +17,8 @@ class CategoriesController < ApplicationController
   end
 
   def search
-    if params[:term]
-      @categories = Category.where("category_name LIKE ?", "%#{params[:term]}%")
+    if params[:query]
+      @categories = Category.where("category_name LIKE ?", "%#{params[:query]}%")
     else
       @categories = Category.all
     end

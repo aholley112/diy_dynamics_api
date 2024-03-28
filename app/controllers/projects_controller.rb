@@ -72,6 +72,14 @@ class ProjectsController < ApplicationController
     end
   end
   
+  def search
+    query = params[:query]
+    @projects = Project.where("title LIKE ? OR description LIKE ?", "%#{query}%", "%#{query}%")
+    projects_with_image_url = @projects.map do |project|
+      project.as_json.merge(image_url: project.image.attached? ? url_for(project.image) : nil)
+    end
+    render json: projects_with_image_url
+  end
 
   # PUT /projects/:id
   # Update a project
@@ -127,4 +135,3 @@ end
     params.permit(:user_id, :title, :description, :instructions, :est_time_to_completion, :material_names, :tool_names, :image)
   end
 end
-

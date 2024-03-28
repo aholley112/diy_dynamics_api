@@ -22,11 +22,22 @@ class FavoritesController < ApplicationController
     # GET /users/:user_id/favorites
     # List all favorites for a user
     def index
-        user = User.find(params[:user_id])
-        favorites = user.favorites.includes(:project)
-        render json: favorites.map { |favorite| favorite.project }
-    end
+      user = User.find(params[:user_id])
+      favorites = user.favorites.includes(:project)
   
+      # Update this line to include the image_url
+      favorites_with_image_url = favorites.map do |favorite|
+        project_with_image_url(favorite.project)
+      end
+  
+      render json: favorites_with_image_url, status: :ok
+  end
+  
+  
+    def project_with_image_url(project)
+      project.as_json.merge(image_url: project.image.attached? ? url_for(project.image) : nil)
+    end
+    
     # DELETE /favorites/:id
     # Deletes a favorite by id
     def destroy

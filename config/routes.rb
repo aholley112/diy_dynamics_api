@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get 'projects/search', to: 'projects#search'
+  get 'categories/search', to: 'categories#search'
+
   # User and Profile routes
   resources :users do
     resource :profile, only: [:show, :create, :update, :destroy]
@@ -30,14 +34,11 @@ Rails.application.routes.draw do
     member do
       get 'projects', to: 'projects#index_by_category'
     end
-    collection do
-      get 'search', to: 'categories#search'
-    end
   end
 
 
   namespace :admin do
-    resources :categories  # Add more resources as needed for admin management
+    resources :categories  
   end
   
   # Other resources
