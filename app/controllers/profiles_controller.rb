@@ -9,8 +9,15 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    if @profile.update(profile_params)
-      @profile.profile_picture.attach(profile_params[:profile_picture]) if profile_params[:profile_picture]
+    if profile_params[:remove_profile_picture] == '1'
+      @profile.profile_picture.purge if @profile.profile_picture.attached?
+    end
+
+    if profile_params[:profile_picture].present?
+      @profile.profile_picture.attach(profile_params[:profile_picture])
+    end
+
+    if @profile.update(profile_params.except(:profile_picture, :remove_profile_picture))
       render_profile_json(@profile)
     else
       render json: @profile.errors, status: :unprocessable_entity
@@ -39,7 +46,7 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:bio, :profile_picture)
+    params.require(:profile).permit(:bio, :profile_picture, :remove_profile_picture)
   end
 
   def render_profile_json(profile)

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: [:show, :update, :destroy]
+    before_action :set_user, only: [:show, :update, :destroy, :upload_image]
     skip_before_action :authenticate_request, only: [:create]
   
     # GET /users
@@ -14,7 +14,13 @@ class UsersController < ApplicationController
     # Show a specific user
 
     def show
-      render json: @user, status: :ok
+        if @user.image.attached?
+          profile_picture_url = url_for(@user.image)
+        else
+          profile_picture_url = nil  
+        end
+    
+      render json: @user.as_json.merge({ profilePictureUrl: profile_picture_url}), status: ok
     end
 
     def upload_image
@@ -46,6 +52,10 @@ class UsersController < ApplicationController
     # Update a user
 
     def update
+      if params[:remove_picture] == '1'
+        @user.image.purge if @user.image.attached?
+      end
+    
       if @user.update(user_params)
         render json: @user, status: :ok
       else
@@ -71,7 +81,7 @@ class UsersController < ApplicationController
     # Defines parameters
 
     def user_params
-      params.permit(:first_name, :last_name, :email, :username, :password)
+      params.permit(:first_name, :last_name, :email, :username, :password, :profile_picture)
     end
   end
   
