@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :update, :edit, :destroy]
+  before_action :set_project, only: [:show, :update, :edit, :destroy, :add_to_favorites]
   before_action :check_owner, only: [:edit, :update]
-  skip_before_action :authenticate_request, only: [:index, :show, :index_by_category] 
+  skip_before_action :authenticate_request, only: [:index, :index_by_category] 
+  
 
   # GET /projects
   # List all projects
@@ -38,10 +39,18 @@ class ProjectsController < ApplicationController
   # Show a specific project
 
   def show
-    project = Project.find(params[:id])
-  project_data = project.as_json(include: { categories: { only: [:id, :category_name] } })
-  project_data[:image_url] = project.image.attached? ? url_for(project.image) : nil
-  project_data[:userId] = project.user_id
+  
+    @project = Project.find(params[:id])
+  project_data = @project.as_json
+  project_data[:image_url] = url_for(@project.image) if @project.image.attached?
+  project_data[:user_id] = @project.user_id
+
+  favorite = current_user&.favorites&.find_by(project_id: @project.id)
+  project_data[:is_favorite_project] = favorite.present?
+  project_data[:favorite_id] = favorite&.id
+
+  puts "Current User ID: #{current_user&.id}"
+  puts "Favorite: #{favorite.inspect}"
 
   render json: project_data
   end
@@ -98,11 +107,8 @@ class ProjectsController < ApplicationController
         @project.categories << new_category
       end
     end
-
-    # Respond with the updated project details
     render json: @project, status: :ok
   else
-    # If the project couldn't be updated, respond with the errors
     render json: @project.errors, status: :unprocessable_entity
   end
 end

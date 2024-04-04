@@ -35,6 +35,12 @@ Rails.application.routes.draw do
       get 'projects', to: 'projects#index_by_category'
     end
   end
+  
+  resources :favorites do
+    member do
+      put :status, action: :update_status
+    end
+  end
 
 
   namespace :admin do
