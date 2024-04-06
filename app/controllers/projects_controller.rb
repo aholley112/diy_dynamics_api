@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :update, :edit, :destroy, :add_to_favorites]
   before_action :check_owner, only: [:edit, :update]
-  skip_before_action :authenticate_request, only: [:index, :index_by_category] 
+  skip_before_action :authenticate_request, only: [:index, :show, :index_by_category] 
   
 
   # GET /projects
@@ -10,7 +10,8 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     projects_with_image_url = @projects.map do |project|
-      project.as_json.merge(image_url: project.image.attached? ? url_for(project.image) : nil)
+      project.as_json.merge(
+        image_url: project.image.attached? ? url_for(project.image) : nil)
     end
     render json: projects_with_image_url, status: :ok
   end

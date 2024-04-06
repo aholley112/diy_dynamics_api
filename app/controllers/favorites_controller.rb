@@ -65,6 +65,7 @@ def update_status
 end
 
   private
+  
 
   # Finds a favorite by id and sets it for the destroy action
   def set_favorite
