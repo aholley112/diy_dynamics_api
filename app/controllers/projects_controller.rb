@@ -1,9 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :update, :edit, :destroy, :add_to_favorites]
   before_action :check_owner, only: [:edit, :update]
-  skip_before_action :authenticate_request, only: [:index, :show, :index_by_category] 
+  skip_before_action :authenticate_request, only: [ :index_by_category] 
   
-
   # GET /projects
   # List all projects
 
@@ -41,7 +40,7 @@ class ProjectsController < ApplicationController
 
   def show
   
-    @project = Project.find(params[:id])
+  @project = Project.find(params[:id])
   project_data = @project.as_json
   project_data[:image_url] = url_for(@project.image) if @project.image.attached?
   project_data[:user_id] = @project.user_id
