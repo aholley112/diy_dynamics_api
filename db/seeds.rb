@@ -49,3 +49,13 @@ def find_or_create_project(category_name, project_attrs, user)
     project
   end
 end
+
+user = User.find_or_initialize_by(email: 'amanda@testing.com')
+user.assign_attributes({
+  username: 'amanda_testing',
+  first_name: 'Amanda',
+  last_name: 'Feely',
+  password: 'password', 
+  admin: true
+})
+user.save!
