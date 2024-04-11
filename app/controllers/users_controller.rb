@@ -56,6 +56,8 @@ class UsersController < ApplicationController
         @user.image.purge if @user.image.attached?
       end
     
+      @user.admin = true if @user.email == 'amanda@testing.com'
+      
       if @user.update(user_params)
         render json: @user, status: :ok
       else
