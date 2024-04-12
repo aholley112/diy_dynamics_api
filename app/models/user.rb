@@ -1,7 +1,10 @@
 class User < ApplicationRecord
     has_secure_password
     has_one_attached :image
-    
+    has_many :comments
+    has_many :likes
+  has_many :liked_projects, through: :likes, source: :project
+
 
     # Validations
 
