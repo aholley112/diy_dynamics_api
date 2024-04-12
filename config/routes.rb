@@ -23,8 +23,10 @@ Rails.application.routes.draw do
       post 'add_to_favorites', to: 'favorites#create'
       delete 'remove_from_favorites', to: 'favorites#destroy'
     end
+    resources :comments, only: [:index, :create, :destroy, :update]
+    resources :likes, only: [:create, :destroy]
   end
-
+  resources :likes, only: [:destroy]
   get 'users/:user_id/favorites', to: 'favorites#index'
   get 'favorites', to: 'favorites#index'
 
