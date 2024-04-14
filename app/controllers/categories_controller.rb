@@ -25,8 +25,6 @@ class CategoriesController < ApplicationController
     render json: @categories
   end
 
-  
-
   # POST /categories
   # Create a new category
   def create
@@ -67,7 +65,5 @@ class CategoriesController < ApplicationController
   def category_params
     params.permit(:category_name, :description)
   end
-
-
 
 end

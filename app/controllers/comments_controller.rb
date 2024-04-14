@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     # Create a new comment for a project
     def create
       @comment = @project.comments.build(comment_params)
-      @comment.user = current_user  
+      @comment.user = current_user  # Assuming you have a way to identify the current user
   
       if @comment.save
         render json: @comment, status: :created
@@ -43,14 +43,17 @@ class CommentsController < ApplicationController
   
     private
   
+    # Set the project for the comment
     def set_project
       @project = Project.find(params[:project_id])
     end
   
+    # Set the comment for the update and destroy actions
     def set_comment
       @comment = @project.comments.find(params[:id])
     end
   
+    # Paramaters 
     def comment_params
       params.require(:comment).permit(:text)
     end

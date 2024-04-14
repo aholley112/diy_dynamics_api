@@ -33,7 +33,7 @@ class FavoritesController < ApplicationController
     render json: favorites_with_image_url, status: :ok
   end
 
-
+ # Include URL, favorite_id, and status in the project JSON
   def project_with_image_url(favorite)
     favorite.project.as_json.merge(
       image_url: favorite.project.image.attached? ? url_for(favorite.project.image) : nil,
@@ -53,7 +53,9 @@ class FavoritesController < ApplicationController
     end
   end
 
-
+ # PUT /favorites/:id/status
+  # Updates the status of a favorite in the drop down 
+  
 def update_status
   puts "Updating status to #{params[:status]} for favorite #{params[:id]}"
 
