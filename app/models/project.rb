@@ -3,6 +3,10 @@ class Project < ApplicationRecord
 # Associations
   belongs_to :user
   has_one_attached :image
+  has_many :comments, dependent: :destroy
+  has_many :likes
+  has_many :likers, through: :likes, source: :user
+
 
 # Categories
 has_and_belongs_to_many :categories, join_table: 'categories_projects'
