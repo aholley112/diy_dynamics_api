@@ -28,7 +28,6 @@ class ProjectsController < ApplicationController
     render json: service.search(params[:query]), status: :ok
   end
 
-
   def create
     service = ProjectsService::Main.new(user: current_user, request: request)
     project = service.create(project_params)
@@ -66,6 +65,7 @@ end
     @project = Project.find(params[:id])
   end
 
+
   def check_owner
     render json: { error: 'You are not authorized to edit this project.' }, status: :forbidden unless @project.user_id == current_user.id
   end
@@ -73,4 +73,6 @@ end
   def project_params
     params.permit(:title, :description, :instructions, :est_time_to_completion, :material_names, :tool_names, :image, :category_id)
   end
+
+  
 end

@@ -11,7 +11,7 @@ class FavoritesController < ApplicationController
     if favorite
       render json: { status: 'error', message: 'Project already added to favorites.' }, status: :unprocessable_entity
     else
-      favorite = @current_user.favorites.build(project: project, status: 'wantToDo') 
+      favorite = @current_user.favorites.build(project: project, status: 'unclassified')
       if favorite.save
         render json: { status: 'success', message: 'Project added to favorites.', favorite_id: favorite.id }, status: :ok
       else
@@ -55,7 +55,7 @@ class FavoritesController < ApplicationController
 
  # PUT /favorites/:id/status
   # Updates the status of a favorite in the drop down 
-  
+
 def update_status
   puts "Updating status to #{params[:status]} for favorite #{params[:id]}"
 
