@@ -41,6 +41,8 @@ Rails.application.routes.draw do
   resources :favorites do
     member do
       put :status, action: :update_status
+      post 'add_to_planner', to: 'favorites#add_to_planner'
+      post 'remove_from_planner', to: 'favorites#remove_from_planner'
     end
   end
 
