@@ -17,9 +17,11 @@ class CommentsController < ApplicationController
               created_at: comment.created_at,
               updated_at: comment.updated_at,
               user: {
-                  id: user.id,
-                  name: user.first_name + ' ' + user.last_name, 
-                  profile_picture_url: profile&.profile_picture.attached? ? url_for(profile.profile_picture) : nil
+                id: current_user.id,
+                username: current_user.username,
+                first_name: current_user.first_name,
+                last_name: current_user.last_name,
+                profile_picture_url: current_user.profile&.profile_picture.attached? ? url_for(current_user.profile.profile_picture) : nil
               }
           }
       end

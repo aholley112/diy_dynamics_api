@@ -68,8 +68,6 @@ end
 
   private
   
-
-  # Finds a favorite by id and sets it for the destroy action
   def set_favorite
     @favorite = @current_user.favorites.find_by(id: params[:id])
     unless @favorite
