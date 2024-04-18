@@ -3,9 +3,7 @@ class ApplicationController < ActionController::API
   before_action :authenticate_request
   attr_reader :current_user
   
-
   private
-
 
   # Authenticate incoming requests using JWT
   def authenticate_request
@@ -21,12 +19,13 @@ class ApplicationController < ActionController::API
     end
   end
   
-
   # Decode JWT token
   def jwt_decode(token)
     decoded = JWT.decode(token, Rails.application.credentials.secret_key_base)[0]
     HashWithIndifferentAccess.new decoded
   end
+
+  # Method to check if the current user is an admin
   def authenticate_admin
     render json: { error: 'Not authorized' }, status: :unauthorized unless @current_user&.admin?
   end

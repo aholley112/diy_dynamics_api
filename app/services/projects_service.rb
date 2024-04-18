@@ -2,11 +2,13 @@ module ProjectsService
   class Main
     include Rails.application.routes.url_helpers
 
+    # Initializes the service with the current user and request context
     def initialize(user:, request:)
       @user = user
       @request = request
     end
 
+    # Creates a new project from the provided parameters
     def create(params)
       project = Project.new(params.except(:user_id, :category_id, :image))
       project.user = @user
@@ -25,28 +27,30 @@ module ProjectsService
       end
     end
 
-
+    # Lists all projects and formats them for the response
     def list_all
       Project.all.map { |project| format_project(project) }
     end
 
+    # Lists projects by category and formats them for the response
     def list_by_category(category_id)
       Category.find(category_id).projects.map { |project| format_project(project) }
     end
 
+    # Searches projects by title or description
     def search(query)
       projects = Project.where("title LIKE ? OR description LIKE ?", "%#{query}%", "%#{query}%")
       projects.map { |project| format_project(project) }
     end
   
-
+    # Shows a single project by ID and formats it for the response
     def show(project_id)
       project = Project.find(project_id)
       format_project(project)
     end
 
+    # Updates a project with new parameters
     def update(project, params)
-      # Update the project with the provided params
       if project.update(params.except(:category_id, :image))
         Rails.logger.info "updated project: #{project.attributes}"
         # Handle category association if provided
@@ -57,7 +61,6 @@ module ProjectsService
 
         # Handle image attachment if provided
         project.image.attach(params[:image]) if params[:image].present?
-
         format_project(project)
       else
         Rails.logger.error "Update failed: #{project.errors.full_messages}"
@@ -68,6 +71,7 @@ module ProjectsService
 
     private
 
+    # Formats project details including image URLs and favorite status
     def format_project(project)
     project_data = project.as_json
     if project.image.attached?

@@ -42,7 +42,6 @@ class FavoritesController < ApplicationController
     )
   end
   
-  
   # DELETE /favorites/:id
   # Deletes a favorite by id
   def destroy
@@ -55,7 +54,6 @@ class FavoritesController < ApplicationController
 
  # PUT /favorites/:id/status
   # Updates the status of a favorite in the drop down 
-
 def update_status
   puts "Updating status to #{params[:status]} for favorite #{params[:id]}"
 
@@ -68,6 +66,7 @@ end
 
   private
   
+  # Sets favorite 
   def set_favorite
     @favorite = @current_user.favorites.find_by(id: params[:id])
     unless @favorite
